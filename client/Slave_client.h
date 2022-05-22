@@ -1,8 +1,8 @@
 #include "../gen-cpp/Slave.h"
 #include <memory>
-#include </usr/local/include/thrift/transport/TSocket.h>
-#include </usr/local/include/thrift/transport/TBufferTransports.h>
-#include </usr/local/include/thrift/protocol/TBinaryProtocol.h>
+#include <thrift/transport/TSocket.h>
+#include <thrift/transport/TBufferTransports.h>
+#include <thrift/protocol/TBinaryProtocol.h>
 using namespace apache::thrift;
 using namespace apache::thrift::protocol;
 using namespace apache::thrift::transport;
@@ -10,6 +10,7 @@ using namespace apache::thrift::transport;
 using namespace ::rpc::slave;
 using boost::shared_ptr;
 
+//master连接slave
 class Slave_Conf {
 public:
     
@@ -40,6 +41,7 @@ private:
 
 bool Slave_Conf::turnOn = false;
 std::shared_ptr<Slave_Conf> Slave_Conf::instance(new Slave_Conf());
+//master连接slave
 ::apache::thrift::stdcxx::shared_ptr<TSocket> Slave_Conf::socket(new TSocket("82.156.171.212", 9091));
 ::apache::thrift::stdcxx::shared_ptr<TTransport> Slave_Conf::transport(new TFramedTransport(socket));
 ::apache::thrift::stdcxx::shared_ptr<TProtocol> Slave_Conf::protocol(new TBinaryProtocol(transport));

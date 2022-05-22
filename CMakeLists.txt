@@ -19,7 +19,9 @@ set(LIB_SRC
         gen-cpp/Slave.cpp
         gen-cpp/slave_constants.cpp
         gen-cpp/slave_types.cpp
-        Client/Slave_client.h
+        db/mysql_rsync.cpp
+        conf/conf.cpp
+        conf/dbconf.cpp
         )
 
 add_library(rpc SHARED ${LIB_SRC})
@@ -36,6 +38,6 @@ add_executable(master_server gen-cpp/Master_server.cpp)
 add_dependencies(master_server rpc)
 target_link_libraries(master_server rpc ${LIB_LIB})
 
-add_executable(master_client Client/Master_client.cpp)
+add_executable(master_client client/Master_client.cpp)
 add_dependencies(master_client rpc)
 target_link_libraries(master_client rpc ${LIB_LIB})
