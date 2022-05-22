@@ -28,6 +28,8 @@ set(LIB_LIB
         rpc
         pthread
         thrift
+        thriftnb
+        event
         )
 
 add_executable(master_server gen-cpp/Master_server.cpp)

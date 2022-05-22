@@ -1,7 +1,7 @@
 #include "../gen-cpp/Master.h"
-#include </usr/local/include/thrift/transport/TSocket.h>
-#include </usr/local/include/thrift/transport/TBufferTransports.h>
-#include </usr/local/include/thrift/protocol/TBinaryProtocol.h>
+#include <thrift/transport/TSocket.h>
+#include <thrift/transport/TBufferTransports.h>
+#include <thrift/protocol/TBinaryProtocol.h>
 using namespace apache::thrift;
 using namespace apache::thrift::protocol;
 using namespace apache::thrift::transport;
@@ -11,7 +11,7 @@ using boost::shared_ptr;
 
 int main(int argc, char **argv) {
     ::apache::thrift::stdcxx::shared_ptr<TSocket> socket(new TSocket("121.40.40.117", 9090)); //注意此处的ip和端口
-    ::apache::thrift::stdcxx::shared_ptr<TTransport> transport(new TBufferedTransport(socket));
+    ::apache::thrift::stdcxx::shared_ptr<TTransport> transport(new TFramedTransport(socket));
     ::apache::thrift::stdcxx::shared_ptr<TProtocol> protocol(new TBinaryProtocol(transport));
     transport->open();
     

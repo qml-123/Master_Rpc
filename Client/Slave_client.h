@@ -41,5 +41,5 @@ private:
 bool Slave_Conf::turnOn = false;
 std::shared_ptr<Slave_Conf> Slave_Conf::instance(new Slave_Conf());
 ::apache::thrift::stdcxx::shared_ptr<TSocket> Slave_Conf::socket(new TSocket("82.156.171.212", 9091));
-::apache::thrift::stdcxx::shared_ptr<TTransport> Slave_Conf::transport(new TBufferedTransport(socket));
+::apache::thrift::stdcxx::shared_ptr<TTransport> Slave_Conf::transport(new TFramedTransport(socket));
 ::apache::thrift::stdcxx::shared_ptr<TProtocol> Slave_Conf::protocol(new TBinaryProtocol(transport));
