@@ -41,6 +41,8 @@ namespace rpc {namespace db{
             int connect();  //1 fail  0 success
             int query(std::string sql);    //1 fail  0 success
             int rollback();
+            int begin();
+            int commit();
             MYSQL* get_con() {return &con;}
         private:
             MYSQL con;
@@ -48,6 +50,7 @@ namespace rpc {namespace db{
         
         class MysqlClient : public Mysql_Base {
         public:
+            int check_key(std::string key);           //1 就绪  0不就绪，无法操作
             int put(std::string key, std::string value);
             std::string get(std::string key);
             int del(std::string key);

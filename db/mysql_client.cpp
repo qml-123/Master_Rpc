@@ -26,8 +26,15 @@ namespace rpc {namespace db {
         }
         
         int Mysql_Base::rollback() {
-            mysql_rollback(&con);
-            return 0;
+            return query("rollback;");
+        }
+        
+        int Mysql_Base::begin() {
+            return query("begin;");
+        }
+        
+        int Mysql_Base::commit() {
+            return query("commit;");
         }
         
         Mysql_Base::~Mysql_Base() {
@@ -35,23 +42,10 @@ namespace rpc {namespace db {
         }
         
         int MysqlClient::put(std::string key, std::string value) {
-            std::cout << "put key=" << key << " value=" << value << std::endl;
-            std::string sql = "SELECT * FROM infoTable WHERE k='" + key + "'";
-            if (query(sql)) {
-                std::cout << "exec sql=" + sql + " err" << std::endl;
-                return 1;
-            }
-            mysql_res res(get_con());
-            if (!res.get_next_row()) {
-                std::cout << "key=" + key + " exists" << std::endl;
-                return 1;
-            }
-            res.free();
-            sql = "INSERT INTO infoTable(k, v) VALUES('" + key + "','" + value + "')";
+            std::string sql = "INSERT INTO infoTable(k, v) VALUES('" + key + "','" + value + "')";
             
             if (query(sql)) {
                 std::cout << "exec sql=" + sql + " err" << std::endl;
-                rollback();
                 return 1;
             }
             
@@ -75,23 +69,17 @@ namespace rpc {namespace db {
         }
         
         int MysqlClient::del(std::string key) {
-            std::cout << "del key=" << key << std::endl;
-            std::string sql = "SELECT * FROM infoTable WHERE k='" + key + "'";
+            std::string sql = "DELETE FROM infoTable WHERE k='" + key + "'";
             if (query(sql)) {
                 std::cout << "exec sql=" + sql + " err" << std::endl;
-                return 1;
-            }
-            mysql_res res(get_con());
-            if (res.get_next_row()) {
-                std::cout << "key=" + key + " is not exists" << std::endl;
-                return 1;
-            }
-            sql = "DELETE FROM infoTable WHERE k='" + key + "'";
-            if (query(sql)) {
-                std::cout << "exec sql=" + sql + " err" << std::endl;
-                rollback();
                 return 1;
             }
             return 0;
         }
+        
+        int MysqlClient::check_key(std::string key) {  //后续加锁
+            
+            return get(key) != "";
+        }
+        
     }}

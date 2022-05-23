@@ -20,6 +20,7 @@ set(LIB_SRC
         gen-cpp/slave_constants.cpp
         gen-cpp/slave_types.cpp
         db/mysql_rsync.cpp
+		db/mysql_client.cpp
         conf/conf.cpp
         conf/dbconf.cpp
         )
@@ -32,6 +33,7 @@ set(LIB_LIB
         thrift
         thriftnb
         event
+		mysqlclient
         )
 
 add_executable(master_server gen-cpp/Master_server.cpp)
