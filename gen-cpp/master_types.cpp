@@ -117,6 +117,10 @@ void GetResponse::__set_value(const std::string& val) {
 void GetResponse::__set_message(const std::string& val) {
   this->message = val;
 }
+
+void GetResponse::__set_connection_id(const int64_t val) {
+  this->connection_id = val;
+}
 std::ostream& operator<<(std::ostream& out, const GetResponse& obj)
 {
   obj.printTo(out);
@@ -161,6 +165,14 @@ uint32_t GetResponse::read(::apache::thrift::protocol::TProtocol* iprot) {
           xfer += iprot->skip(ftype);
         }
         break;
+      case 3:
+        if (ftype == ::apache::thrift::protocol::T_I64) {
+          xfer += iprot->readI64(this->connection_id);
+          this->__isset.connection_id = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
       default:
         xfer += iprot->skip(ftype);
         break;
@@ -186,6 +198,10 @@ uint32_t GetResponse::write(::apache::thrift::protocol::TProtocol* oprot) const 
   xfer += oprot->writeString(this->message);
   xfer += oprot->writeFieldEnd();
 
+  xfer += oprot->writeFieldBegin("connection_id", ::apache::thrift::protocol::T_I64, 3);
+  xfer += oprot->writeI64(this->connection_id);
+  xfer += oprot->writeFieldEnd();
+
   xfer += oprot->writeFieldStop();
   xfer += oprot->writeStructEnd();
   return xfer;
@@ -195,17 +211,20 @@ void swap(GetResponse &a, GetResponse &b) {
   using ::std::swap;
   swap(a.value, b.value);
   swap(a.message, b.message);
+  swap(a.connection_id, b.connection_id);
   swap(a.__isset, b.__isset);
 }
 
 GetResponse::GetResponse(const GetResponse& other2) {
   value = other2.value;
   message = other2.message;
+  connection_id = other2.connection_id;
   __isset = other2.__isset;
 }
 GetResponse& GetResponse::operator=(const GetResponse& other3) {
   value = other3.value;
   message = other3.message;
+  connection_id = other3.connection_id;
   __isset = other3.__isset;
   return *this;
 }
@@ -214,6 +233,7 @@ void GetResponse::printTo(std::ostream& out) const {
   out << "GetResponse(";
   out << "value=" << to_string(value);
   out << ", " << "message=" << to_string(message);
+  out << ", " << "connection_id=" << to_string(connection_id);
   out << ")";
 }
 
@@ -334,6 +354,10 @@ SetResponse::~SetResponse() throw() {
 }
 
 
+void SetResponse::__set_connection_id(const int64_t val) {
+  this->connection_id = val;
+}
+
 void SetResponse::__set_message(const std::string& val) {
   this->message = val;
 }
@@ -366,6 +390,14 @@ uint32_t SetResponse::read(::apache::thrift::protocol::TProtocol* iprot) {
     switch (fid)
     {
       case 1:
+        if (ftype == ::apache::thrift::protocol::T_I64) {
+          xfer += iprot->readI64(this->connection_id);
+          this->__isset.connection_id = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
         if (ftype == ::apache::thrift::protocol::T_STRING) {
           xfer += iprot->readString(this->message);
           this->__isset.message = true;
@@ -390,7 +422,11 @@ uint32_t SetResponse::write(::apache::thrift::protocol::TProtocol* oprot) const 
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("SetResponse");
 
-  xfer += oprot->writeFieldBegin("message", ::apache::thrift::protocol::T_STRING, 1);
+  xfer += oprot->writeFieldBegin("connection_id", ::apache::thrift::protocol::T_I64, 1);
+  xfer += oprot->writeI64(this->connection_id);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("message", ::apache::thrift::protocol::T_STRING, 2);
   xfer += oprot->writeString(this->message);
   xfer += oprot->writeFieldEnd();
 
@@ -401,15 +437,18 @@ uint32_t SetResponse::write(::apache::thrift::protocol::TProtocol* oprot) const 
 
 void swap(SetResponse &a, SetResponse &b) {
   using ::std::swap;
+  swap(a.connection_id, b.connection_id);
   swap(a.message, b.message);
   swap(a.__isset, b.__isset);
 }
 
 SetResponse::SetResponse(const SetResponse& other6) {
+  connection_id = other6.connection_id;
   message = other6.message;
   __isset = other6.__isset;
 }
 SetResponse& SetResponse::operator=(const SetResponse& other7) {
+  connection_id = other7.connection_id;
   message = other7.message;
   __isset = other7.__isset;
   return *this;
@@ -417,7 +456,8 @@ SetResponse& SetResponse::operator=(const SetResponse& other7) {
 void SetResponse::printTo(std::ostream& out) const {
   using ::apache::thrift::to_string;
   out << "SetResponse(";
-  out << "message=" << to_string(message);
+  out << "connection_id=" << to_string(connection_id);
+  out << ", " << "message=" << to_string(message);
   out << ")";
 }
 
@@ -518,6 +558,10 @@ DelResponse::~DelResponse() throw() {
 }
 
 
+void DelResponse::__set_connection_id(const int64_t val) {
+  this->connection_id = val;
+}
+
 void DelResponse::__set_message(const std::string& val) {
   this->message = val;
 }
@@ -550,6 +594,14 @@ uint32_t DelResponse::read(::apache::thrift::protocol::TProtocol* iprot) {
     switch (fid)
     {
       case 1:
+        if (ftype == ::apache::thrift::protocol::T_I64) {
+          xfer += iprot->readI64(this->connection_id);
+          this->__isset.connection_id = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
         if (ftype == ::apache::thrift::protocol::T_STRING) {
           xfer += iprot->readString(this->message);
           this->__isset.message = true;
@@ -574,7 +626,11 @@ uint32_t DelResponse::write(::apache::thrift::protocol::TProtocol* oprot) const 
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("DelResponse");
 
-  xfer += oprot->writeFieldBegin("message", ::apache::thrift::protocol::T_STRING, 1);
+  xfer += oprot->writeFieldBegin("connection_id", ::apache::thrift::protocol::T_I64, 1);
+  xfer += oprot->writeI64(this->connection_id);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("message", ::apache::thrift::protocol::T_STRING, 2);
   xfer += oprot->writeString(this->message);
   xfer += oprot->writeFieldEnd();
 
@@ -585,15 +641,18 @@ uint32_t DelResponse::write(::apache::thrift::protocol::TProtocol* oprot) const 
 
 void swap(DelResponse &a, DelResponse &b) {
   using ::std::swap;
+  swap(a.connection_id, b.connection_id);
   swap(a.message, b.message);
   swap(a.__isset, b.__isset);
 }
 
 DelResponse::DelResponse(const DelResponse& other10) {
+  connection_id = other10.connection_id;
   message = other10.message;
   __isset = other10.__isset;
 }
 DelResponse& DelResponse::operator=(const DelResponse& other11) {
+  connection_id = other11.connection_id;
   message = other11.message;
   __isset = other11.__isset;
   return *this;
@@ -601,7 +660,8 @@ DelResponse& DelResponse::operator=(const DelResponse& other11) {
 void DelResponse::printTo(std::ostream& out) const {
   using ::apache::thrift::to_string;
   out << "DelResponse(";
-  out << "message=" << to_string(message);
+  out << "connection_id=" << to_string(connection_id);
+  out << ", " << "message=" << to_string(message);
   out << ")";
 }
 

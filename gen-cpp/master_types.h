@@ -75,9 +75,10 @@ void swap(GetRequest &a, GetRequest &b);
 std::ostream& operator<<(std::ostream& out, const GetRequest& obj);
 
 typedef struct _GetResponse__isset {
-  _GetResponse__isset() : value(false), message(false) {}
+  _GetResponse__isset() : value(false), message(false), connection_id(false) {}
   bool value :1;
   bool message :1;
+  bool connection_id :1;
 } _GetResponse__isset;
 
 class GetResponse : public virtual ::apache::thrift::TBase {
@@ -85,12 +86,13 @@ class GetResponse : public virtual ::apache::thrift::TBase {
 
   GetResponse(const GetResponse&);
   GetResponse& operator=(const GetResponse&);
-  GetResponse() : value(), message() {
+  GetResponse() : value(), message(), connection_id(0) {
   }
 
   virtual ~GetResponse() throw();
   std::string value;
   std::string message;
+  int64_t connection_id;
 
   _GetResponse__isset __isset;
 
@@ -98,11 +100,15 @@ class GetResponse : public virtual ::apache::thrift::TBase {
 
   void __set_message(const std::string& val);
 
+  void __set_connection_id(const int64_t val);
+
   bool operator == (const GetResponse & rhs) const
   {
     if (!(value == rhs.value))
       return false;
     if (!(message == rhs.message))
+      return false;
+    if (!(connection_id == rhs.connection_id))
       return false;
     return true;
   }
@@ -171,7 +177,8 @@ void swap(SetRequest &a, SetRequest &b);
 std::ostream& operator<<(std::ostream& out, const SetRequest& obj);
 
 typedef struct _SetResponse__isset {
-  _SetResponse__isset() : message(false) {}
+  _SetResponse__isset() : connection_id(false), message(false) {}
+  bool connection_id :1;
   bool message :1;
 } _SetResponse__isset;
 
@@ -180,18 +187,23 @@ class SetResponse : public virtual ::apache::thrift::TBase {
 
   SetResponse(const SetResponse&);
   SetResponse& operator=(const SetResponse&);
-  SetResponse() : message() {
+  SetResponse() : connection_id(0), message() {
   }
 
   virtual ~SetResponse() throw();
+  int64_t connection_id;
   std::string message;
 
   _SetResponse__isset __isset;
+
+  void __set_connection_id(const int64_t val);
 
   void __set_message(const std::string& val);
 
   bool operator == (const SetResponse & rhs) const
   {
+    if (!(connection_id == rhs.connection_id))
+      return false;
     if (!(message == rhs.message))
       return false;
     return true;
@@ -255,7 +267,8 @@ void swap(DelRequest &a, DelRequest &b);
 std::ostream& operator<<(std::ostream& out, const DelRequest& obj);
 
 typedef struct _DelResponse__isset {
-  _DelResponse__isset() : message(false) {}
+  _DelResponse__isset() : connection_id(false), message(false) {}
+  bool connection_id :1;
   bool message :1;
 } _DelResponse__isset;
 
@@ -264,18 +277,23 @@ class DelResponse : public virtual ::apache::thrift::TBase {
 
   DelResponse(const DelResponse&);
   DelResponse& operator=(const DelResponse&);
-  DelResponse() : message() {
+  DelResponse() : connection_id(0), message() {
   }
 
   virtual ~DelResponse() throw();
+  int64_t connection_id;
   std::string message;
 
   _DelResponse__isset __isset;
+
+  void __set_connection_id(const int64_t val);
 
   void __set_message(const std::string& val);
 
   bool operator == (const DelResponse & rhs) const
   {
+    if (!(connection_id == rhs.connection_id))
+      return false;
     if (!(message == rhs.message))
       return false;
     return true;

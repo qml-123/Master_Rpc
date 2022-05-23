@@ -2,7 +2,9 @@
 #include "../client/Slave_client.h"
 #include "../db/mysql_rsync.h"
 #include "../conf/dbconf.h"
+#include "../db/mysql_client.h"
 #include <iostream>
+#include <memory>
 #include <thrift/protocol/TBinaryProtocol.h>
 
 #include <thrift/server/TSimpleServer.h>
@@ -36,40 +38,74 @@ public:
     
     void Get(GetResponse& _return, const GetRequest& getRequest) {
         // Your implementation goes here
-        printf("Master Get\n");
-        printf("Master receive request from client:%s\n",getRequest.key.c_str());
+        std::cout << "Master Get begin" << std::endl;
         //master获取slave连接
         auto client = Slave_Conf::getInstance()->GetSlaveClient();
-        printf("getclient success\n");
-        TryResponse tryResponse;
-        TryRequest tryRequest;
-        client->Try(tryResponse, tryRequest);
         client->Get(_return, getRequest);
+        std::cout << "Master Get key=" + getRequest.key + " value=" + _return.message << std::endl;
+        std::cout << std::endl;
     }
     
     void Set(SetResponse& _return, const SetRequest& setRequest) {
         // Your implementation goes here
-        printf("Master Set\n");
+        std::cout << "Master Try begin" << std::endl;
         auto client = Slave_Conf::getInstance()->GetSlaveClient();
         TryResponse tryResponse;
         TryRequest tryRequest;
+        tryRequest.key = setRequest.key;
         client->Try(tryResponse, tryRequest);
+        std::cout << "Master Try " << (tryResponse.check_key ? "exist" : "not exist") << std::endl;
+        if (tryResponse.check_key) {
+            _return.message = "fail";
+            return;
+        }
+        std::cout << "Master Set begin" << std::endl;
         client->Set(_return, setRequest);
+        FinishRequest finishRequest;
+        FinishResponse finishResponse;
+        if (_return.message == "fail") {
+            finishRequest.call_func = "rollback";
+        } else {
+            finishRequest.call_func = "commit";
+        }
+        std::cout << "Master Set " + _return.message << std::endl;
+        finishRequest.connection_id = _return.connection_id;
+        client->Finish(finishResponse, finishRequest);
+        std::cout << std::endl;
     }
     
     void Del(DelResponse& _return, const DelRequest& delRequest) {
         // Your implementation goes here
-        printf("Master Del\n");
+        std::cout << "Master Try begin" << std::endl;
         auto client = Slave_Conf::getInstance()->GetSlaveClient();
         TryResponse tryResponse;
         TryRequest tryRequest;
+        tryRequest.key = delRequest.key;
         client->Try(tryResponse, tryRequest);
+        std::cout << "Master Try " << (tryResponse.check_key ? "exist" : "not exist") << std::endl;
+        if (!tryResponse.check_key) {
+            _return.message = "fail";
+            return;
+        }
+        std::cout << "Master Del begin" << std::endl;
         client->Del(_return, delRequest);
+        FinishRequest finishRequest;
+        FinishResponse finishResponse;
+        if (_return.message == "fail") {
+            finishRequest.call_func = "rollback";
+        } else {
+            finishRequest.call_func = "commit";
+        }
+        std::cout << "Master Del " + _return.message << std::endl;
+        finishRequest.connection_id = _return.connection_id;
+        client->Finish(finishResponse, finishRequest);
+        std::cout << std::endl;
     }
     
 };
 
 int main(int argc, char **argv) {
+    
     auto client = Slave_Conf::getInstance()->GetSlaveClient();
     RsyncResponse rsyncResponse;
     RsyncRequest  rsyncRequest;

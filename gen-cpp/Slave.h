@@ -23,6 +23,7 @@ class SlaveIf {
   virtual ~SlaveIf() {}
   virtual void Rsync(RsyncResponse& _return, const RsyncRequest& rsyncRequest) = 0;
   virtual void Try(TryResponse& _return, const TryRequest& tryRequest) = 0;
+  virtual void Finish(FinishResponse& _return, const FinishRequest& finishRequest) = 0;
   virtual void Get( ::rpc::master::GetResponse& _return, const  ::rpc::master::GetRequest& getRequest) = 0;
   virtual void Set( ::rpc::master::SetResponse& _return, const  ::rpc::master::SetRequest& setRequest) = 0;
   virtual void Del( ::rpc::master::DelResponse& _return, const  ::rpc::master::DelRequest& delRequest) = 0;
@@ -59,6 +60,9 @@ class SlaveNull : virtual public SlaveIf {
     return;
   }
   void Try(TryResponse& /* _return */, const TryRequest& /* tryRequest */) {
+    return;
+  }
+  void Finish(FinishResponse& /* _return */, const FinishRequest& /* finishRequest */) {
     return;
   }
   void Get( ::rpc::master::GetResponse& /* _return */, const  ::rpc::master::GetRequest& /* getRequest */) {
@@ -275,6 +279,110 @@ class Slave_Try_presult {
   TryResponse* success;
 
   _Slave_Try_presult__isset __isset;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+
+};
+
+typedef struct _Slave_Finish_args__isset {
+  _Slave_Finish_args__isset() : finishRequest(false) {}
+  bool finishRequest :1;
+} _Slave_Finish_args__isset;
+
+class Slave_Finish_args {
+ public:
+
+  Slave_Finish_args(const Slave_Finish_args&);
+  Slave_Finish_args& operator=(const Slave_Finish_args&);
+  Slave_Finish_args() {
+  }
+
+  virtual ~Slave_Finish_args() throw();
+  FinishRequest finishRequest;
+
+  _Slave_Finish_args__isset __isset;
+
+  void __set_finishRequest(const FinishRequest& val);
+
+  bool operator == (const Slave_Finish_args & rhs) const
+  {
+    if (!(finishRequest == rhs.finishRequest))
+      return false;
+    return true;
+  }
+  bool operator != (const Slave_Finish_args &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const Slave_Finish_args & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+
+class Slave_Finish_pargs {
+ public:
+
+
+  virtual ~Slave_Finish_pargs() throw();
+  const FinishRequest* finishRequest;
+
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _Slave_Finish_result__isset {
+  _Slave_Finish_result__isset() : success(false) {}
+  bool success :1;
+} _Slave_Finish_result__isset;
+
+class Slave_Finish_result {
+ public:
+
+  Slave_Finish_result(const Slave_Finish_result&);
+  Slave_Finish_result& operator=(const Slave_Finish_result&);
+  Slave_Finish_result() {
+  }
+
+  virtual ~Slave_Finish_result() throw();
+  FinishResponse success;
+
+  _Slave_Finish_result__isset __isset;
+
+  void __set_success(const FinishResponse& val);
+
+  bool operator == (const Slave_Finish_result & rhs) const
+  {
+    if (!(success == rhs.success))
+      return false;
+    return true;
+  }
+  bool operator != (const Slave_Finish_result &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const Slave_Finish_result & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _Slave_Finish_presult__isset {
+  _Slave_Finish_presult__isset() : success(false) {}
+  bool success :1;
+} _Slave_Finish_presult__isset;
+
+class Slave_Finish_presult {
+ public:
+
+
+  virtual ~Slave_Finish_presult() throw();
+  FinishResponse* success;
+
+  _Slave_Finish_presult__isset __isset;
 
   uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
 
@@ -623,6 +731,9 @@ class SlaveClient : virtual public SlaveIf {
   void Try(TryResponse& _return, const TryRequest& tryRequest);
   void send_Try(const TryRequest& tryRequest);
   void recv_Try(TryResponse& _return);
+  void Finish(FinishResponse& _return, const FinishRequest& finishRequest);
+  void send_Finish(const FinishRequest& finishRequest);
+  void recv_Finish(FinishResponse& _return);
   void Get( ::rpc::master::GetResponse& _return, const  ::rpc::master::GetRequest& getRequest);
   void send_Get(const  ::rpc::master::GetRequest& getRequest);
   void recv_Get( ::rpc::master::GetResponse& _return);
@@ -649,6 +760,7 @@ class SlaveProcessor : public ::apache::thrift::TDispatchProcessor {
   ProcessMap processMap_;
   void process_Rsync(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
   void process_Try(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
+  void process_Finish(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
   void process_Get(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
   void process_Set(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
   void process_Del(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
@@ -657,6 +769,7 @@ class SlaveProcessor : public ::apache::thrift::TDispatchProcessor {
     iface_(iface) {
     processMap_["Rsync"] = &SlaveProcessor::process_Rsync;
     processMap_["Try"] = &SlaveProcessor::process_Try;
+    processMap_["Finish"] = &SlaveProcessor::process_Finish;
     processMap_["Get"] = &SlaveProcessor::process_Get;
     processMap_["Set"] = &SlaveProcessor::process_Set;
     processMap_["Del"] = &SlaveProcessor::process_Del;
@@ -705,6 +818,16 @@ class SlaveMultiface : virtual public SlaveIf {
       ifaces_[i]->Try(_return, tryRequest);
     }
     ifaces_[i]->Try(_return, tryRequest);
+    return;
+  }
+
+  void Finish(FinishResponse& _return, const FinishRequest& finishRequest) {
+    size_t sz = ifaces_.size();
+    size_t i = 0;
+    for (; i < (sz - 1); ++i) {
+      ifaces_[i]->Finish(_return, finishRequest);
+    }
+    ifaces_[i]->Finish(_return, finishRequest);
     return;
   }
 
@@ -774,6 +897,9 @@ class SlaveConcurrentClient : virtual public SlaveIf {
   void Try(TryResponse& _return, const TryRequest& tryRequest);
   int32_t send_Try(const TryRequest& tryRequest);
   void recv_Try(TryResponse& _return, const int32_t seqid);
+  void Finish(FinishResponse& _return, const FinishRequest& finishRequest);
+  int32_t send_Finish(const FinishRequest& finishRequest);
+  void recv_Finish(FinishResponse& _return, const int32_t seqid);
   void Get( ::rpc::master::GetResponse& _return, const  ::rpc::master::GetRequest& getRequest);
   int32_t send_Get(const  ::rpc::master::GetRequest& getRequest);
   void recv_Get( ::rpc::master::GetResponse& _return, const int32_t seqid);

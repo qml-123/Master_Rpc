@@ -20,7 +20,7 @@ class SlaveHandler : virtual public SlaveIf {
     // Your initialization goes here
   }
 
-  void Rsync(RsyncResponse& _return, const RsyncRequest& RsyncRequest) {
+  void Rsync(RsyncResponse& _return, const RsyncRequest& rsyncRequest) {
     // Your implementation goes here
     printf("Rsync\n");
   }
@@ -28,6 +28,11 @@ class SlaveHandler : virtual public SlaveIf {
   void Try(TryResponse& _return, const TryRequest& tryRequest) {
     // Your implementation goes here
     printf("Try\n");
+  }
+
+  void Finish(FinishResponse& _return, const FinishRequest& finishRequest) {
+    // Your implementation goes here
+    printf("Finish\n");
   }
 
   void Get( ::rpc::master::GetResponse& _return, const  ::rpc::master::GetRequest& getRequest) {

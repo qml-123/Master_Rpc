@@ -7,6 +7,7 @@ struct GetRequest{
 struct GetResponse{
     1: string value,
     2: string message,
+    3: i64 connection_id,
 }
 
 struct SetRequest{
@@ -15,7 +16,8 @@ struct SetRequest{
 }
 
 struct SetResponse{
-    1: string message,
+    1: i64 connection_id,
+    2: string message,
 }
 
 struct DelRequest{
@@ -23,7 +25,8 @@ struct DelRequest{
 }
 
 struct DelResponse{
-    1: string message,
+    1: i64 connection_id,
+    2: string message,
 }
 
 service Master{

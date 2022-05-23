@@ -29,6 +29,10 @@ class TryRequest;
 
 class TryResponse;
 
+class FinishRequest;
+
+class FinishResponse;
+
 typedef struct _RsyncRequest__isset {
   _RsyncRequest__isset() : database(false), sql_file(false), message(false) {}
   bool database :1;
@@ -174,8 +178,9 @@ void swap(TryRequest &a, TryRequest &b);
 std::ostream& operator<<(std::ostream& out, const TryRequest& obj);
 
 typedef struct _TryResponse__isset {
-  _TryResponse__isset() : message(false) {}
+  _TryResponse__isset() : message(false), check_key(false) {}
   bool message :1;
+  bool check_key :1;
 } _TryResponse__isset;
 
 class TryResponse : public virtual ::apache::thrift::TBase {
@@ -183,19 +188,24 @@ class TryResponse : public virtual ::apache::thrift::TBase {
 
   TryResponse(const TryResponse&);
   TryResponse& operator=(const TryResponse&);
-  TryResponse() : message() {
+  TryResponse() : message(), check_key(0) {
   }
 
   virtual ~TryResponse() throw();
   std::string message;
+  bool check_key;
 
   _TryResponse__isset __isset;
 
   void __set_message(const std::string& val);
 
+  void __set_check_key(const bool val);
+
   bool operator == (const TryResponse & rhs) const
   {
     if (!(message == rhs.message))
+      return false;
+    if (!(check_key == rhs.check_key))
       return false;
     return true;
   }
@@ -214,6 +224,102 @@ class TryResponse : public virtual ::apache::thrift::TBase {
 void swap(TryResponse &a, TryResponse &b);
 
 std::ostream& operator<<(std::ostream& out, const TryResponse& obj);
+
+typedef struct _FinishRequest__isset {
+  _FinishRequest__isset() : connection_id(false), message(false), call_func(false) {}
+  bool connection_id :1;
+  bool message :1;
+  bool call_func :1;
+} _FinishRequest__isset;
+
+class FinishRequest : public virtual ::apache::thrift::TBase {
+ public:
+
+  FinishRequest(const FinishRequest&);
+  FinishRequest& operator=(const FinishRequest&);
+  FinishRequest() : connection_id(0), message(), call_func() {
+  }
+
+  virtual ~FinishRequest() throw();
+  int64_t connection_id;
+  std::string message;
+  std::string call_func;
+
+  _FinishRequest__isset __isset;
+
+  void __set_connection_id(const int64_t val);
+
+  void __set_message(const std::string& val);
+
+  void __set_call_func(const std::string& val);
+
+  bool operator == (const FinishRequest & rhs) const
+  {
+    if (!(connection_id == rhs.connection_id))
+      return false;
+    if (!(message == rhs.message))
+      return false;
+    if (!(call_func == rhs.call_func))
+      return false;
+    return true;
+  }
+  bool operator != (const FinishRequest &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const FinishRequest & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+  virtual void printTo(std::ostream& out) const;
+};
+
+void swap(FinishRequest &a, FinishRequest &b);
+
+std::ostream& operator<<(std::ostream& out, const FinishRequest& obj);
+
+typedef struct _FinishResponse__isset {
+  _FinishResponse__isset() : message(false) {}
+  bool message :1;
+} _FinishResponse__isset;
+
+class FinishResponse : public virtual ::apache::thrift::TBase {
+ public:
+
+  FinishResponse(const FinishResponse&);
+  FinishResponse& operator=(const FinishResponse&);
+  FinishResponse() : message() {
+  }
+
+  virtual ~FinishResponse() throw();
+  std::string message;
+
+  _FinishResponse__isset __isset;
+
+  void __set_message(const std::string& val);
+
+  bool operator == (const FinishResponse & rhs) const
+  {
+    if (!(message == rhs.message))
+      return false;
+    return true;
+  }
+  bool operator != (const FinishResponse &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const FinishResponse & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+  virtual void printTo(std::ostream& out) const;
+};
+
+void swap(FinishResponse &a, FinishResponse &b);
+
+std::ostream& operator<<(std::ostream& out, const FinishResponse& obj);
 
 }} // namespace
 

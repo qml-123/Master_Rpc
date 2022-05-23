@@ -15,6 +15,7 @@ namespace rpc {namespace db {
             } else {
                 QML_ASSERT2(false, "mysql_real_connect error");
             }
+            mysql_autocommit(&con,0);
         }
         
         int Mysql_Base::connect() {
@@ -25,16 +26,34 @@ namespace rpc {namespace db {
             return mysql_query(&con, sql.c_str());
         }
         
-        int Mysql_Base::rollback() {
-            return query("rollback;");
+        int Mysql_Base::begin() {
+            return query("BEGIN;");
         }
         
-        int Mysql_Base::begin() {
-            return query("begin;");
+        int Mysql_Base::delete_savepoint(std::string savepoint) {
+            return query("RELEASE SAVEPOINT " + savepoint + ";");
+        }
+        
+        int Mysql_Base::save_point(std::string savepoint) {
+            return query("SAVEPOINT " + savepoint + ";");
+        }
+        
+        int Mysql_Base::exec(std::string func) {
+            if (func == "commit") {
+                return commit();
+            } else if (func == "rollback") {
+                return rollback();
+            } else {
+                return 1;
+            }
+        }
+        
+        int Mysql_Base::rollback() {
+            return query("ROLLBACK;");
         }
         
         int Mysql_Base::commit() {
-            return query("commit;");
+            return query("COMMIT;");
         }
         
         Mysql_Base::~Mysql_Base() {
@@ -78,8 +97,7 @@ namespace rpc {namespace db {
         }
         
         int MysqlClient::check_key(std::string key) {  //后续加锁
-            
-            return get(key) != "";
+            return this->get(key) != "";
         }
         
     }}

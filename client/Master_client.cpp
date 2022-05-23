@@ -24,18 +24,16 @@ int main(int argc, char **argv) {
     SetRequest setRequest;
     SetResponse setResponse;
     setRequest.key = "b";
-    setRequest.value = "b";
+    setRequest.value = "qmlqml";
     client.Set(setResponse, setRequest);
     std::cout << "setResponse:" + setResponse.message << std::endl;
     
     GetRequest getRequest;
     GetResponse getResponse;
     //client发出Get请求，发送key
-    getRequest.key="a";
+    getRequest.key="b";
     client.Get(getResponse, getRequest);
-    std::cout << "getResponse:[message]:" + getResponse.message << " " << "[key]= " << "a value=" << getResponse.value << std::endl;
-    
-
+    std::cout << "getResponse:[message]:" + getResponse.message << " " << "[key]= " + getRequest.key << " value=" << getResponse.value << std::endl;
     
     DelRequest delRequest;
     DelResponse delResponse;

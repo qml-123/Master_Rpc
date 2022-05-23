@@ -36,14 +36,19 @@ namespace rpc {namespace db{
         public:
             Mysql_Base();
             ~Mysql_Base();
+            int begin();
+            int rollback();
+            int commit();
+            int save_point(std::string savepoint);
+            int delete_savepoint(std::string savepoint);
+            int exec(std::string func);
         
         protected:
             int connect();  //1 fail  0 success
             int query(std::string sql);    //1 fail  0 success
-            int rollback();
-            int begin();
-            int commit();
+            
             MYSQL* get_con() {return &con;}
+        
         private:
             MYSQL con;
         };
