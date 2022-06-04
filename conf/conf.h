@@ -11,6 +11,8 @@
 #include <string.h>
 #include <sstream>
 #include <execinfo.h>
+#include <unistd.h>
+#include "../thread/thread.h"
 
 #define QML_ASSERT(x) \
 	if(!(x)) { \
@@ -31,5 +33,7 @@
 
 void Backtrace(std::vector<std::string>& bt, int size, int skip);
 std::string BacktraceToString(int size, int skip, const std::string& prefix);
+pid_t GetThreadId();
 
+void print(const std::string& st);
 #endif //MASTER_RPC_CONF_H

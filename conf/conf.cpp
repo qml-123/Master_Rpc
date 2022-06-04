@@ -3,6 +3,15 @@
 //
 
 #include "conf.h"
+#include <stdio.h>
+#include <string>
+#include <pthread.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/syscall.h>
+#include <stdint.h>
+#include <vector>
+
 void Backtrace(std::vector<std::string>& bt, int size, int skip) {
     void** array = (void**)malloc((sizeof(void*) * size));
     size_t s = ::backtrace(array, size);
@@ -31,4 +40,13 @@ std::string BacktraceToString(int size, int skip, const std::string& prefix) {
         ss << prefix << bt[i] << std::endl;
     }
     return ss.str();
+}
+
+pid_t GetThreadId() {
+    return syscall(SYS_gettid);
+}
+
+void print(const std::string& st) {
+    std::cout << "thread_id=" + std::to_string(GetThreadId()) +
+                 " thread_name=" + rpc::thread::Thread::GetName() + " " + st << std::endl;
 }

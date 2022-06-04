@@ -1,8 +1,8 @@
 #include "Master.h"
-#include "../client/Slave_client.h"
 #include "../db/mysql_rsync.h"
 #include "../conf/dbconf.h"
 #include "../db/mysql_client.h"
+#include "../client/slave_client_pool.h"
 #include <iostream>
 #include <memory>
 #include <thrift/protocol/TBinaryProtocol.h>
@@ -28,6 +28,7 @@ using namespace ::apache::thrift::concurrency;
 using namespace ::rpc::db;
 using namespace ::rpc::conf::db;
 using namespace ::rpc::master;
+using namespace ::rpc::client;
 
 //接口类，继承自MaterIf
 class MasterHandler : virtual public MasterIf {
@@ -40,16 +41,34 @@ public:
         // Your implementation goes here
         std::cout << "Master Get begin" << std::endl;
         //master获取slave连接
-        auto client = Slave_Conf::getInstance()->GetSlaveClient();
+//        auto client = Slave_Conf::getInstance()->GetSlaveClient();
+    
+        std::cout << "SlaveClient free_count: " << std::to_string(SlaveClientPool::get()->free_count()) << std::endl;
+        auto client_iterator = SlaveClientPool::get()->getClient();
+        auto client = *client_iterator;
+    
+        std::cout << "SlaveClient free_count: " << std::to_string(SlaveClientPool::get()->free_count()) << std::endl;
+        
         client->Get(_return, getRequest);
         std::cout << "Master Get key=" + getRequest.key + " value=" + _return.message << std::endl;
+
+        SlaveClientPool::get()->delClient(client_iterator);
+    
+        std::cout << "SlaveClient free_count: " << std::to_string(SlaveClientPool::get()->free_count()) << std::endl;
+        std::cout << "Master Get end" << std::endl;
         std::cout << std::endl;
     }
     
     void Set(SetResponse& _return, const SetRequest& setRequest) {
         // Your implementation goes here
         std::cout << "Master Try begin" << std::endl;
-        auto client = Slave_Conf::getInstance()->GetSlaveClient();
+//        auto client = Slave_Conf::getInstance()->GetSlaveClient();
+        std::cout << "SlaveClient free_count: " << std::to_string(SlaveClientPool::get()->free_count()) << std::endl;
+        auto client_iterstor = SlaveClientPool::get()->getClient();
+        auto client = *client_iterstor;
+    
+        std::cout << "SlaveClient free_count: " << std::to_string(SlaveClientPool::get()->free_count()) << std::endl;
+        
         TryResponse tryResponse;
         TryRequest tryRequest;
         tryRequest.key = setRequest.key;
@@ -71,13 +90,25 @@ public:
         std::cout << "Master Set " + _return.message << std::endl;
         finishRequest.connection_id = _return.connection_id;
         client->Finish(finishResponse, finishRequest);
+        
+        SlaveClientPool::get()->delClient(client_iterstor);
+        std::cout << "SlaveClient free_count: " << std::to_string(SlaveClientPool::get()->free_count()) << std::endl;
+        std::cout << "Master Set end" << std::endl;
         std::cout << std::endl;
     }
     
     void Del(DelResponse& _return, const DelRequest& delRequest) {
         // Your implementation goes here
         std::cout << "Master Try begin" << std::endl;
-        auto client = Slave_Conf::getInstance()->GetSlaveClient();
+//        auto client = Slave_Conf::getInstance()->GetSlaveClient();
+        std::cout << "SlaveClient free_count: " << std::to_string(SlaveClientPool::get()->free_count()) << std::endl;
+
+        auto client_iterator = SlaveClientPool::get()->getClient();
+        auto client = *client_iterator;
+    
+    
+        std::cout << "SlaveClient free_count: " << std::to_string(SlaveClientPool::get()->free_count()) << std::endl;
+        
         TryResponse tryResponse;
         TryRequest tryRequest;
         tryRequest.key = delRequest.key;
@@ -99,6 +130,11 @@ public:
         std::cout << "Master Del " + _return.message << std::endl;
         finishRequest.connection_id = _return.connection_id;
         client->Finish(finishResponse, finishRequest);
+
+        
+        SlaveClientPool::get()->delClient(client_iterator);
+        std::cout << "SlaveClient free_count: " << std::to_string(SlaveClientPool::get()->free_count()) << std::endl;
+        std::cout << "Master Del end" << std::endl;
         std::cout << std::endl;
     }
     
@@ -106,7 +142,9 @@ public:
 
 int main(int argc, char **argv) {
     
-    auto client = Slave_Conf::getInstance()->GetSlaveClient();
+    auto client_iterator = SlaveClientPool::get()->getClient();
+    auto client = *client_iterator;
+    
     RsyncResponse rsyncResponse;
     RsyncRequest  rsyncRequest;
     rsyncRequest.database = MysqlConf::db_name;
@@ -114,6 +152,7 @@ int main(int argc, char **argv) {
     rsyncRequest.message = "rsync";
     client->Rsync(rsyncResponse, rsyncRequest);
     std::cout << "rsync response:" << rsyncResponse.message << std::endl;
+    SlaveClientPool::get()->delClient(client_iterator);
     
     int port = 9090;
     //业务接口,暴露给client
@@ -125,7 +164,7 @@ int main(int argc, char **argv) {
     
     //任务处理线程池
     ::apache::thrift::stdcxx::shared_ptr<ThreadManager> threadManager = ThreadManager::newSimpleThreadManager(15);
-    ::apache::thrift::stdcxx::shared_ptr<PosixThreadFactory> threadFactory(new PosixThreadFactory());
+    ::apache::thrift::stdcxx::shared_ptr<PlatformThreadFactory> threadFactory(new PlatformThreadFactory());
     
     threadManager->threadFactory(threadFactory);
     threadManager->start();

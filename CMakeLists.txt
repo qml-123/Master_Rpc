@@ -23,6 +23,9 @@ set(LIB_SRC
 		db/mysql_client.cpp
         conf/conf.cpp
         conf/dbconf.cpp
+		thread/thread.cpp
+		thread/mutex.cpp
+		thread/threadpool.cpp
         )
 
 add_library(rpc SHARED ${LIB_SRC})
@@ -43,3 +46,7 @@ target_link_libraries(master_server rpc ${LIB_LIB})
 add_executable(master_client client/Master_client.cpp)
 add_dependencies(master_client rpc)
 target_link_libraries(master_client rpc ${LIB_LIB})
+
+add_executable(thread_test thread/thread_test.cpp)
+add_dependencies(thread_test rpc)
+target_link_libraries(thread_test rpc ${LIB_LIB})

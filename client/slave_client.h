@@ -5,6 +5,7 @@
 #ifndef MASTER_RPC_SLAVE_CLIENT__H
 #define MASTER_RPC_SLAVE_CLIENT__H
 
+
 #include "../gen-cpp/Slave.h"
 #include <memory>
 #include <thrift/transport/TSocket.h>
@@ -55,6 +56,8 @@ namespace rpc{namespace client{
         ::apache::thrift::stdcxx::shared_ptr<TProtocol> Slave_Conf::protocol(new TBinaryProtocol(transport));
         
     }}
+
+
 
 
 #endif //MASTER_RPC_SLAVE_CLIENT__H
