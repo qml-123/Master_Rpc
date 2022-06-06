@@ -65,7 +65,7 @@ int main() {
     std::function<void(void*,const void*)> cb(&fun1);
     rpc::thread::ThreadPool::ThreadTask task(cb, 1);
     threadPool->addTask(task);
-    threadPool->addTask(task);
+//    threadPool->addTask(task);
     while (1) {
         print("count:" + std::to_string(threadPool->hasTaskCount()));
         sleep(10);
