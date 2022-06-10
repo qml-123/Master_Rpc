@@ -50,3 +50,11 @@ void print(const std::string& st) {
     std::cout << "thread_id=" + std::to_string(GetThreadId()) +
                  " thread_name=" + rpc::thread::Thread::GetName() + " " + st << std::endl;
 }
+
+const std::string set_func(bool flag) {
+    if (flag) {
+        return "update";
+    } else {
+        return "insert";
+    }
+}

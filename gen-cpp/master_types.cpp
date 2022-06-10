@@ -249,6 +249,10 @@ void SetRequest::__set_key(const std::string& val) {
 void SetRequest::__set_value(const std::string& val) {
   this->value = val;
 }
+
+void SetRequest::__set_func_call(const std::string& val) {
+  this->func_call = val;
+}
 std::ostream& operator<<(std::ostream& out, const SetRequest& obj)
 {
   obj.printTo(out);
@@ -293,6 +297,14 @@ uint32_t SetRequest::read(::apache::thrift::protocol::TProtocol* iprot) {
           xfer += iprot->skip(ftype);
         }
         break;
+      case 3:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->func_call);
+          this->__isset.func_call = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
       default:
         xfer += iprot->skip(ftype);
         break;
@@ -318,6 +330,10 @@ uint32_t SetRequest::write(::apache::thrift::protocol::TProtocol* oprot) const {
   xfer += oprot->writeString(this->value);
   xfer += oprot->writeFieldEnd();
 
+  xfer += oprot->writeFieldBegin("func_call", ::apache::thrift::protocol::T_STRING, 3);
+  xfer += oprot->writeString(this->func_call);
+  xfer += oprot->writeFieldEnd();
+
   xfer += oprot->writeFieldStop();
   xfer += oprot->writeStructEnd();
   return xfer;
@@ -327,17 +343,20 @@ void swap(SetRequest &a, SetRequest &b) {
   using ::std::swap;
   swap(a.key, b.key);
   swap(a.value, b.value);
+  swap(a.func_call, b.func_call);
   swap(a.__isset, b.__isset);
 }
 
 SetRequest::SetRequest(const SetRequest& other4) {
   key = other4.key;
   value = other4.value;
+  func_call = other4.func_call;
   __isset = other4.__isset;
 }
 SetRequest& SetRequest::operator=(const SetRequest& other5) {
   key = other5.key;
   value = other5.value;
+  func_call = other5.func_call;
   __isset = other5.__isset;
   return *this;
 }
@@ -346,6 +365,7 @@ void SetRequest::printTo(std::ostream& out) const {
   out << "SetRequest(";
   out << "key=" << to_string(key);
   out << ", " << "value=" << to_string(value);
+  out << ", " << "func_call=" << to_string(func_call);
   out << ")";
 }
 

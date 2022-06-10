@@ -36,4 +36,5 @@ std::string BacktraceToString(int size, int skip, const std::string& prefix);
 pid_t GetThreadId();
 
 void print(const std::string& st);
+const std::string set_func(bool flag);
 #endif //MASTER_RPC_CONF_H

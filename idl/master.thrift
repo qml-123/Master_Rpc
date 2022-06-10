@@ -13,6 +13,7 @@ struct GetResponse{
 struct SetRequest{
     1: string key,
     2: string value,
+    3: string func_call,
 }
 
 struct SetResponse{

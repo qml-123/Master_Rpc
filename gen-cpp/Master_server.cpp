@@ -73,11 +73,11 @@ public:
         TryRequest tryRequest;
         tryRequest.key = setRequest.key;
         client->Try(tryResponse, tryRequest);
-        std::cout << "Master Try " << (tryResponse.check_key ? "exist" : "not exist") << std::endl;
-        if (tryResponse.check_key) {
-            _return.message = "fail";
-            return;
-        }
+    
+        std::string func_call = set_func(tryResponse.check_key);
+    
+        const SetRequest setReq(setRequest.key, setRequest.value, func_call);
+        
         std::cout << "Master Set begin" << std::endl;
         client->Set(_return, setRequest);
         FinishRequest finishRequest;

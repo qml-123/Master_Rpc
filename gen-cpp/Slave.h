@@ -863,7 +863,7 @@ class SlaveMultiface : virtual public SlaveIf {
 
 };
 
-// The 'concurrent' client is a Thread safe client that correctly handles
+// The 'concurrent' client is a thread safe client that correctly handles
 // out of order responses.  It is slower than the regular client, so should
 // only be used when you need to share a connection among multiple threads
 class SlaveConcurrentClient : virtual public SlaveIf {
