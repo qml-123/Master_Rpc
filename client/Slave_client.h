@@ -5,6 +5,7 @@
 #ifndef MASTER_RPC_SLAVE_CLIENT__H
 #define MASTER_RPC_SLAVE_CLIENT__H
 
+
 #include "../gen-cpp/Slave.h"
 #include <memory>
 #include <thrift/transport/TSocket.h>
@@ -29,6 +30,9 @@ namespace rpc{namespace client{
             static std::shared_ptr<Slave_Conf> getInstance()
             {
                 if(!turnOn) {
+                    socket->setConnTimeout(2000);
+                    socket->setRecvTimeout(2000);
+                    socket->setSendTimeout(2000);
                     transport->open();
                     turnOn = true;
                 }
@@ -55,6 +59,8 @@ namespace rpc{namespace client{
         ::apache::thrift::stdcxx::shared_ptr<TProtocol> Slave_Conf::protocol(new TBinaryProtocol(transport));
         
     }}
+
+
 
 
 #endif //MASTER_RPC_SLAVE_CLIENT__H

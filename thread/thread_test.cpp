@@ -5,6 +5,8 @@
 #include "threadpool.h"
 #include "thread.h"
 #include "../gen-cpp/Master.h"
+#include "../log/elog.h"
+#include "../conf/conf.h"
 #include <iostream>
 #include <thrift/transport/TSocket.h>
 #include <thrift/transport/TBufferTransports.h>
@@ -16,17 +18,17 @@ using namespace apache::thrift::transport;
 using namespace ::rpc::master;
 using boost::shared_ptr;
 
-
 void fun1(void* x,const void* y) {
-    print("begin");
+//    print("begin");
+    log_i("%s","begin");
     sleep(10);
-    print("check");
+    log_i("%s", "check");
     ::apache::thrift::stdcxx::shared_ptr<TSocket> socket(new TSocket("121.40.40.117", 9090)); //注意此处的ip和端口
     ::apache::thrift::stdcxx::shared_ptr<TTransport> transport(new TFramedTransport(socket));
     ::apache::thrift::stdcxx::shared_ptr<TProtocol> protocol(new TBinaryProtocol(transport));
     transport->open();
     
-    print("open end");
+//    print("open end");
     MasterClient client(protocol);
     
     SetRequest setRequest;
@@ -59,6 +61,15 @@ void fun2(void* x, const void* y) {
 }
 
 int main() {
+    setbuf(stdout, NULL);
+    elog_init();
+    elog_set_fmt(ELOG_LVL_ASSERT, ELOG_FMT_ALL);
+    elog_set_fmt(ELOG_LVL_ERROR, ELOG_FMT_ALL);
+    elog_set_fmt(ELOG_LVL_WARN, ELOG_FMT_ALL);
+    elog_set_fmt(ELOG_LVL_INFO, ELOG_FMT_ALL);
+    elog_set_fmt(ELOG_LVL_DEBUG, ELOG_FMT_ALL & ~ELOG_FMT_FUNC);
+    elog_set_fmt(ELOG_LVL_VERBOSE, ELOG_FMT_ALL & ~ELOG_FMT_FUNC);
+    elog_start();
 //    rpc::Thread::ThreadPool::ptr threadPool(new rpc::Thread::ThreadPool(1, "12"));
 //    std::cout << threadPool->getName();
     rpc::thread::ThreadPool::ptr threadPool(new rpc::thread::ThreadPool(5, "qml"));
@@ -67,7 +78,8 @@ int main() {
     threadPool->addTask(task);
 //    threadPool->addTask(task);
     while (1) {
-        print("count:" + std::to_string(threadPool->hasTaskCount()));
+        std::string com = "count:" + std::to_string(threadPool->hasTaskCount());
+        log_i(com.c_str());
         sleep(10);
     }
     return 0;

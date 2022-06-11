@@ -70,12 +70,12 @@ namespace rpc {namespace thread{
             while (true) {
                 Condition::Cond cond(m_cond);
                 while (!stopping() && !hasTaskCount()) {
-                    print("waiting");
+//                    print("waiting");
                     cond.wait();
                 }
                 
                 if (stopping()) {
-                    print("exit");
+//                    print("exit");
                     break;
                 }
                 

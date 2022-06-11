@@ -4,6 +4,7 @@
 
 #include "mysql_client.h"
 #include "../conf/conf.h"
+#include "../log/elog.h"
 #include <mysql/mysql.h>
 using namespace ::rpc::conf::db;
 
@@ -11,8 +12,9 @@ namespace rpc {namespace db {
         Mysql_Base::Mysql_Base() {
             mysql_init(&con);
             if (!connect()) {
-                std::cout << "connection success" << std::endl;
+//                std::cout << "connection success" << std::endl;
             } else {
+                log_e("mysql_real_connect error");                  //throw err
                 QML_ASSERT2(false, "mysql_real_connect error");
             }
             mysql_autocommit(&con,0);
@@ -64,7 +66,8 @@ namespace rpc {namespace db {
             std::string sql = "INSERT INTO infoTable(k, v) VALUES('" + key + "','" + value + "')";
             
             if (query(sql)) {
-                std::cout << "exec sql=" + sql + " err" << std::endl;
+//                log_w("exec sql=" + sql + " err");
+//                std::cout << "exec sql=" + sql + " err" << std::endl;
                 return 1;
             }
             

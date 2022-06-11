@@ -17,22 +17,22 @@ namespace rpc {namespace thread {
         /**
          * @brief 线程类
          */
-        class thread : Noncopyable {
+        class Thread : Noncopyable {
         public:
             /// 线程智能指针类型
-            typedef std::shared_ptr<thread> ptr;
+            typedef std::shared_ptr<Thread> ptr;
             
             /**
              * @brief 构造函数
              * @param[in] cb 线程执行函数
              * @param[in] name 线程名称
              */
-            thread(std::function<void()> cb, const std::string& name);
+            Thread(std::function<void()> cb, const std::string& name);
             
             /**
              * @brief 析构函数
              */
-            ~thread();
+            ~Thread();
             
             /**
              * @brief 线程ID
@@ -52,7 +52,7 @@ namespace rpc {namespace thread {
             /**
              * @brief 获取当前的线程指针
              */
-            static thread* GetThis();
+            static Thread* GetThis();
             
             /**
              * @brief 获取当前的线程名称

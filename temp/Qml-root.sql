@@ -27,7 +27,7 @@ CREATE TABLE `infoTable` (
   `k` varchar(20) NOT NULL,
   `v` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +36,7 @@ CREATE TABLE `infoTable` (
 
 LOCK TABLES `infoTable` WRITE;
 /*!40000 ALTER TABLE `infoTable` DISABLE KEYS */;
-INSERT INTO `infoTable` VALUES (1,'a','b');
+INSERT INTO `infoTable` VALUES (5,'a','b');
 /*!40000 ALTER TABLE `infoTable` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-23  2:09:04
+-- Dump completed on 2022-06-12  1:58:36

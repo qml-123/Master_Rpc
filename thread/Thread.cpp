@@ -6,19 +6,19 @@
 #include "../conf/conf.h"
 
 namespace rpc{namespace thread {
-        static thread_local thread* t_thread = nullptr;
+        static thread_local Thread* t_thread = nullptr;
         static thread_local std::string t_thread_name = "UNKNOW";
         
         
-        thread* thread::GetThis() {
+        Thread* Thread::GetThis() {
             return t_thread;
         }
         
-        const std::string& thread::GetName() {
+        const std::string& Thread::GetName() {
             return t_thread_name;
         }
         
-        void thread::SetName(const std::string& name) {
+        void Thread::SetName(const std::string& name) {
             if(name.empty()) {
                 return;
             }
@@ -28,26 +28,26 @@ namespace rpc{namespace thread {
             t_thread_name = name;
         }
         
-        thread::thread(std::function<void()> cb, const std::string& name)
+        Thread::Thread(std::function<void()> cb, const std::string& name)
                 :m_cb(cb)
                 ,m_name(name) {
             if(name.empty()) {
                 m_name = "UNKNOW";
             }
-            int rt = pthread_create(&m_thread, nullptr, &thread::run, this);
+            int rt = pthread_create(&m_thread, nullptr, &Thread::run, this);
             if(rt) {
                 throw std::logic_error("pthread_create error");
             }
             m_semaphore.wait();
         }
         
-        thread::~thread() {
+        Thread::~Thread() {
             if(m_thread) {
                 pthread_detach(m_thread);
             }
         }
         
-        void thread::join() {
+        void Thread::join() {
             if(m_thread) {
                 int rt = pthread_join(m_thread, nullptr);
                 if(rt) {
@@ -57,8 +57,8 @@ namespace rpc{namespace thread {
             }
         }
         
-        void* thread::run(void* arg) {
-            thread* thread = (thread*)arg;
+        void* Thread::run(void* arg) {
+            Thread* thread = (Thread*)arg;
             t_thread = thread;
             t_thread_name = thread->m_name;
             thread->m_id = GetThreadId();

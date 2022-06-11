@@ -3,6 +3,7 @@
 #include "../conf/dbconf.h"
 #include "../db/mysql_client.h"
 #include "../client/slave_client_pool.h"
+#include "log/elog.h"
 #include <iostream>
 #include <memory>
 #include <thrift/protocol/TBinaryProtocol.h>
@@ -39,108 +40,120 @@ public:
     
     void Get(GetResponse& _return, const GetRequest& getRequest) {
         // Your implementation goes here
-        std::cout << "Master Get begin" << std::endl;
+//        std::cout << "Master Get begin" << std::endl;
+        log_i("Get begin");
         //master获取slave连接
 //        auto client = Slave_Conf::getInstance()->GetSlaveClient();
-    
-        std::cout << "SlaveClient free_count: " << std::to_string(SlaveClientPool::get()->free_count()) << std::endl;
+        log_i(("SlaveClient free_count: " + std::to_string(SlaveClientPool::get()->free_count())).c_str());
         auto client_iterator = SlaveClientPool::get()->getClient();
         auto client = *client_iterator;
     
-        std::cout << "SlaveClient free_count: " << std::to_string(SlaveClientPool::get()->free_count()) << std::endl;
+        log_i(("SlaveClient free_count: " + std::to_string(SlaveClientPool::get()->free_count())).c_str());
         
         client->Get(_return, getRequest);
-        std::cout << "Master Get key=" + getRequest.key + " value=" + _return.message << std::endl;
+        log_i(("Get key=" + getRequest.key + " value=" + _return.message).c_str());
 
         SlaveClientPool::get()->delClient(client_iterator);
     
-        std::cout << "SlaveClient free_count: " << std::to_string(SlaveClientPool::get()->free_count()) << std::endl;
-        std::cout << "Master Get end" << std::endl;
-        std::cout << std::endl;
+        log_i(("SlaveClient free_count: " + std::to_string(SlaveClientPool::get()->free_count())).c_str());
+        log_i("Get end");
     }
     
     void Set(SetResponse& _return, const SetRequest& setRequest) {
         // Your implementation goes here
-        std::cout << "Master Try begin" << std::endl;
+        log_i("Set Try begin");
 //        auto client = Slave_Conf::getInstance()->GetSlaveClient();
-        std::cout << "SlaveClient free_count: " << std::to_string(SlaveClientPool::get()->free_count()) << std::endl;
+        log_i(("SlaveClient free_count: " + std::to_string(SlaveClientPool::get()->free_count())).c_str());
         auto client_iterstor = SlaveClientPool::get()->getClient();
         auto client = *client_iterstor;
     
-        std::cout << "SlaveClient free_count: " << std::to_string(SlaveClientPool::get()->free_count()) << std::endl;
+        log_i(("SlaveClient free_count: " + std::to_string(SlaveClientPool::get()->free_count())).c_str());
         
         TryResponse tryResponse;
         TryRequest tryRequest;
         tryRequest.key = setRequest.key;
         client->Try(tryResponse, tryRequest);
     
-        std::string func_call = set_func(tryResponse.check_key);
+        const SetRequest setReq(setRequest.key, setRequest.value, set_func(tryResponse.check_key));
     
-        const SetRequest setReq(setRequest.key, setRequest.value, func_call);
-        
-        std::cout << "Master Set begin" << std::endl;
-        client->Set(_return, setRequest);
+        log_i(("Set begin, func_call=" + set_func(tryResponse.check_key)).c_str());
+        client->Set(_return, setReq);
         FinishRequest finishRequest;
         FinishResponse finishResponse;
         if (_return.message == "fail") {
+            log_w(("Set key(" + setReq.key +") " + _return.message + " , " + finishRequest.call_func).c_str());
             finishRequest.call_func = "rollback";
         } else {
+            log_i(("Set key(" + setReq.key +") " + _return.message + " , " + finishRequest.call_func).c_str());
             finishRequest.call_func = "commit";
         }
-        std::cout << "Master Set " + _return.message << std::endl;
+        
+        log_i(("Set " + _return.message + " , " + finishRequest.call_func).c_str());
         finishRequest.connection_id = _return.connection_id;
         client->Finish(finishResponse, finishRequest);
         
         SlaveClientPool::get()->delClient(client_iterstor);
-        std::cout << "SlaveClient free_count: " << std::to_string(SlaveClientPool::get()->free_count()) << std::endl;
-        std::cout << "Master Set end" << std::endl;
-        std::cout << std::endl;
+        log_i(("SlaveClient free_count: " + std::to_string(SlaveClientPool::get()->free_count())).c_str());
+        log_i("Set end");
     }
     
     void Del(DelResponse& _return, const DelRequest& delRequest) {
         // Your implementation goes here
-        std::cout << "Master Try begin" << std::endl;
+        log_i("Try begin");
 //        auto client = Slave_Conf::getInstance()->GetSlaveClient();
-        std::cout << "SlaveClient free_count: " << std::to_string(SlaveClientPool::get()->free_count()) << std::endl;
+        log_i(("SlaveClient free_count: " + std::to_string(SlaveClientPool::get()->free_count())).c_str());
 
         auto client_iterator = SlaveClientPool::get()->getClient();
         auto client = *client_iterator;
     
     
-        std::cout << "SlaveClient free_count: " << std::to_string(SlaveClientPool::get()->free_count()) << std::endl;
+        log_i(("SlaveClient free_count: " + std::to_string(SlaveClientPool::get()->free_count())).c_str());
         
         TryResponse tryResponse;
         TryRequest tryRequest;
         tryRequest.key = delRequest.key;
         client->Try(tryResponse, tryRequest);
-        std::cout << "Master Try " << (tryResponse.check_key ? "exist" : "not exist") << std::endl;
+        
         if (!tryResponse.check_key) {
+            log_w(("try fail, key(" + tryRequest.key + ") is not exist").c_str());
             _return.message = "fail";
             return;
         }
-        std::cout << "Master Del begin" << std::endl;
+        log_i("Del begin");
+        
         client->Del(_return, delRequest);
         FinishRequest finishRequest;
         FinishResponse finishResponse;
         if (_return.message == "fail") {
+            log_w(("Del key(" + delRequest.key +") " + _return.message + " , " + finishRequest.call_func).c_str());
             finishRequest.call_func = "rollback";
         } else {
+            log_i(("Del key(" + delRequest.key +") " + _return.message + " , " + finishRequest.call_func).c_str());
             finishRequest.call_func = "commit";
         }
-        std::cout << "Master Del " + _return.message << std::endl;
+        
         finishRequest.connection_id = _return.connection_id;
         client->Finish(finishResponse, finishRequest);
 
         
         SlaveClientPool::get()->delClient(client_iterator);
-        std::cout << "SlaveClient free_count: " << std::to_string(SlaveClientPool::get()->free_count()) << std::endl;
-        std::cout << "Master Del end" << std::endl;
-        std::cout << std::endl;
+        log_i(("SlaveClient free_count: " + std::to_string(SlaveClientPool::get()->free_count())).c_str());
+        log_i("Del end");
     }
     
 };
 
 int main(int argc, char **argv) {
+    //log init
+    setbuf(stdout, NULL);
+    elog_init();
+    elog_set_fmt(ELOG_LVL_ASSERT, ELOG_FMT_LVL | ELOG_FMT_TAG | ELOG_FMT_TIME);
+    elog_set_fmt(ELOG_LVL_ERROR, ELOG_FMT_ALL);
+    elog_set_fmt(ELOG_LVL_WARN, ELOG_FMT_ALL);
+    elog_set_fmt(ELOG_LVL_INFO, ELOG_FMT_ALL);
+    elog_set_fmt(ELOG_LVL_DEBUG, ELOG_FMT_ALL & ~ELOG_FMT_FUNC);
+    elog_set_fmt(ELOG_LVL_VERBOSE, ELOG_FMT_ALL & ~ELOG_FMT_FUNC);
+    elog_start();
     
     auto client_iterator = SlaveClientPool::get()->getClient();
     auto client = *client_iterator;

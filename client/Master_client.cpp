@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
     SetRequest setRequest;
     SetResponse setResponse;
     setRequest.key = "b";
-    setRequest.value = "qmlqml";
+    setRequest.value = "qml";
     client.Set(setResponse, setRequest);
     std::cout << "setResponse:" + setResponse.message << std::endl;
     

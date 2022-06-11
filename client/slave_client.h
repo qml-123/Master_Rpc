@@ -30,6 +30,9 @@ namespace rpc{namespace client{
             static std::shared_ptr<Slave_Conf> getInstance()
             {
                 if(!turnOn) {
+//                    socket->setConnTimeout(2000);
+//                    socket->setRecvTimeout(2000);
+//                    socket->setSendTimeout(2000);
                     transport->open();
                     turnOn = true;
                 }

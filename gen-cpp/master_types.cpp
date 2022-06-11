@@ -368,9 +368,9 @@ void SetRequest::printTo(std::ostream& out) const {
   out << ", " << "func_call=" << to_string(func_call);
   out << ")";
 }
-
-
-SetResponse::~SetResponse() throw() {
+        
+        
+        SetResponse::~SetResponse() throw() {
 }
 
 
