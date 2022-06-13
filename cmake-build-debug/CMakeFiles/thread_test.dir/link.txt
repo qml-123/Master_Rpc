@@ -1,1 +1,0 @@
-/usr/bin/c++  -rdynamic -O0 -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -g CMakeFiles/thread_test.dir/thread/thread_test.cpp.o -o ../bin/thread_test  -Wl,-rpath,/root/wokespace/master_rpc/lib ../lib/librpc.so -lpthread -lthrift -lthriftnb -levent -lmysqlclient 

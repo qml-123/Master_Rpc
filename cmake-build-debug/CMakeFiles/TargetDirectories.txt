@@ -1,6 +1,0 @@
-/root/wokespace/master_rpc/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/root/wokespace/master_rpc/cmake-build-debug/CMakeFiles/edit_cache.dir
-/root/wokespace/master_rpc/cmake-build-debug/CMakeFiles/master_client.dir
-/root/wokespace/master_rpc/cmake-build-debug/CMakeFiles/thread_test.dir
-/root/wokespace/master_rpc/cmake-build-debug/CMakeFiles/rpc.dir
-/root/wokespace/master_rpc/cmake-build-debug/CMakeFiles/master_server.dir

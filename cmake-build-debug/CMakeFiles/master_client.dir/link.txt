@@ -1,1 +1,0 @@
-/usr/bin/c++  -rdynamic -O0 -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -g CMakeFiles/master_client.dir/client/Master_client.cpp.o -o ../bin/master_client  -Wl,-rpath,/root/wokespace/master_rpc/lib ../lib/librpc.so -lpthread -lthrift -lthriftnb -levent -lmysqlclient 
