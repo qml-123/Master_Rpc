@@ -7,12 +7,12 @@
 #include <iostream>
 #include <memory>
 #include <thrift/protocol/TBinaryProtocol.h>
-
 #include <thrift/server/TSimpleServer.h>
 #include <thrift/server/TNonblockingServer.h>
 #include <thrift/server/TThreadPoolServer.h>
 #include <thrift/server/TThreadedServer.h>
 
+#include <thrift/transport/TTransportException.h>
 #include <thrift/transport/TServerSocket.h>
 #include <thrift/transport/TBufferTransports.h>
 #include <thrift/transport/TNonblockingServerSocket.h>
@@ -39,21 +39,23 @@ public:
     }
     
     void Get(GetResponse& _return, const GetRequest& getRequest) {
-        // Your implementation goes here
-//        std::cout << "Master Get begin" << std::endl;
         log_i("Get begin");
         //master获取slave连接
-//        auto client = Slave_Conf::getInstance()->GetSlaveClient();
+        slave_client::ptr ptr(new slave_client);
+        auto client = ptr->GetSlaveClient();
         log_i(("SlaveClient free_count: " + std::to_string(SlaveClientPool::get()->free_count())).c_str());
-        auto client_iterator = SlaveClientPool::get()->getClient();
-        auto client = *client_iterator;
     
         log_i(("SlaveClient free_count: " + std::to_string(SlaveClientPool::get()->free_count())).c_str());
+    
+        try {
+            client->Get(_return, getRequest);
+        }catch (const ::apache::thrift::transport::TTransportException& ttx) {
+            log_e((std::string("Get ") + ttx.what()).c_str());
+            _return.message = "fail";
+            return;
+        }
         
-        client->Get(_return, getRequest);
         log_i(("Get key=" + getRequest.key + " value=" + _return.message).c_str());
-
-        SlaveClientPool::get()->delClient(client_iterator);
     
         log_i(("SlaveClient free_count: " + std::to_string(SlaveClientPool::get()->free_count())).c_str());
         log_i("Get end");
@@ -62,22 +64,34 @@ public:
     void Set(SetResponse& _return, const SetRequest& setRequest) {
         // Your implementation goes here
         log_i("Set Try begin");
-//        auto client = Slave_Conf::getInstance()->GetSlaveClient();
-        log_i(("SlaveClient free_count: " + std::to_string(SlaveClientPool::get()->free_count())).c_str());
-        auto client_iterstor = SlaveClientPool::get()->getClient();
-        auto client = *client_iterstor;
-    
-        log_i(("SlaveClient free_count: " + std::to_string(SlaveClientPool::get()->free_count())).c_str());
+        slave_client::ptr ptr(new slave_client);
+        auto client = ptr->GetSlaveClient();
         
         TryResponse tryResponse;
         TryRequest tryRequest;
         tryRequest.key = setRequest.key;
-        client->Try(tryResponse, tryRequest);
+    
+        try {
+            client->Try(tryResponse, tryRequest);
+        }catch (const ::apache::thrift::transport::TTransportException& ttx) {
+            log_e((std::string("Set Try ") + ttx.what()).c_str());
+            _return.message = "fail";
+            return;
+        }
     
         const SetRequest setReq(setRequest.key, setRequest.value, set_func(tryResponse.check_key));
     
         log_i(("Set begin, func_call=" + set_func(tryResponse.check_key)).c_str());
-        client->Set(_return, setReq);
+    
+        try {
+            client->Set(_return, setReq);
+        }catch (const ::apache::thrift::transport::TTransportException& ttx) {
+            log_e((std::string("Set ") + ttx.what()).c_str());
+            _return.message = "fail";
+            return;
+        }
+        
+        
         FinishRequest finishRequest;
         FinishResponse finishResponse;
         if (_return.message == "fail") {
@@ -90,29 +104,27 @@ public:
         
         log_i(("Set " + _return.message + " , " + finishRequest.call_func).c_str());
         finishRequest.connection_id = _return.connection_id;
-        client->Finish(finishResponse, finishRequest);
         
-        SlaveClientPool::get()->delClient(client_iterstor);
-        log_i(("SlaveClient free_count: " + std::to_string(SlaveClientPool::get()->free_count())).c_str());
-        log_i("Set end");
+        _return.message = Finish(finishResponse, finishRequest, client);
     }
     
     void Del(DelResponse& _return, const DelRequest& delRequest) {
         // Your implementation goes here
-        log_i("Try begin");
-//        auto client = Slave_Conf::getInstance()->GetSlaveClient();
-        log_i(("SlaveClient free_count: " + std::to_string(SlaveClientPool::get()->free_count())).c_str());
-
-        auto client_iterator = SlaveClientPool::get()->getClient();
-        auto client = *client_iterator;
-    
-    
-        log_i(("SlaveClient free_count: " + std::to_string(SlaveClientPool::get()->free_count())).c_str());
+        log_i("Del Try begin");
+        slave_client::ptr ptr(new slave_client);
+        auto client = ptr->GetSlaveClient();
         
         TryResponse tryResponse;
         TryRequest tryRequest;
         tryRequest.key = delRequest.key;
-        client->Try(tryResponse, tryRequest);
+    
+        try {
+            client->Try(tryResponse, tryRequest);
+        }catch (const ::apache::thrift::transport::TTransportException& ttx) {
+            log_e((std::string("Del Try ") + ttx.what()).c_str());
+            _return.message = "fail";
+            return;
+        }
         
         if (!tryResponse.check_key) {
             log_w(("try fail, key(" + tryRequest.key + ") is not exist").c_str());
@@ -120,8 +132,16 @@ public:
             return;
         }
         log_i("Del begin");
+    
+        try {
+            client->Del(_return, delRequest);
+        }catch (const ::apache::thrift::transport::TTransportException& ttx) {
+            log_e((std::string("Del ") + ttx.what()).c_str());
+            _return.message = "fail";
+            return;
+        }
         
-        client->Del(_return, delRequest);
+        
         FinishRequest finishRequest;
         FinishResponse finishResponse;
         if (_return.message == "fail") {
@@ -131,14 +151,24 @@ public:
             log_i(("Del key(" + delRequest.key +") " + _return.message + " , " + finishRequest.call_func).c_str());
             finishRequest.call_func = "commit";
         }
-        
         finishRequest.connection_id = _return.connection_id;
-        client->Finish(finishResponse, finishRequest);
-
         
-        SlaveClientPool::get()->delClient(client_iterator);
-        log_i(("SlaveClient free_count: " + std::to_string(SlaveClientPool::get()->free_count())).c_str());
-        log_i("Del end");
+        _return.message = Finish(finishResponse, finishRequest, client);
+    }
+    
+    std::string Finish(FinishResponse finishResponse, FinishRequest finishRequest, std::shared_ptr<SlaveClient> client) {
+        try {
+            client->Finish(finishResponse, finishRequest);
+        }catch (const ::apache::thrift::transport::TTransportException& ttx) {
+            log_e((std::string("Set finish ") + ttx.what()).c_str());
+            return "fail";
+        }
+    
+        if (finishResponse.message == "fail") {
+            return "fail";
+        }
+        
+        return "success";
     }
     
 };
@@ -155,17 +185,24 @@ int main(int argc, char **argv) {
     elog_set_fmt(ELOG_LVL_VERBOSE, ELOG_FMT_ALL & ~ELOG_FMT_FUNC);
     elog_start();
     
-    auto client_iterator = SlaveClientPool::get()->getClient();
-    auto client = *client_iterator;
+//    auto client_iterator = SlaveClientPool::get()->getClient();
+//    auto client = *client_iterator;
+    slave_client::ptr ptr(new slave_client);
+    auto client = ptr->GetSlaveClient();
     
     RsyncResponse rsyncResponse;
     RsyncRequest  rsyncRequest;
     rsyncRequest.database = MysqlConf::db_name;
     rsyncRequest.sql_file = mysql_rsync::get_sql();
     rsyncRequest.message = "rsync";
-    client->Rsync(rsyncResponse, rsyncRequest);
-    std::cout << "rsync response:" << rsyncResponse.message << std::endl;
-    SlaveClientPool::get()->delClient(client_iterator);
+    
+    try {
+        client->Rsync(rsyncResponse, rsyncRequest);
+    }catch (const ::apache::thrift::transport::TTransportException& ttx) {
+        log_e(ttx.what());
+    }
+    log_i(("rsync response:" + rsyncResponse.message).c_str());
+//    SlaveClientPool::get()->delClient(client_iterator);
     
     int port = 9090;
     //业务接口,暴露给client
@@ -177,7 +214,7 @@ int main(int argc, char **argv) {
     
     //任务处理线程池
     ::apache::thrift::stdcxx::shared_ptr<ThreadManager> threadManager = ThreadManager::newSimpleThreadManager(15);
-    ::apache::thrift::stdcxx::shared_ptr<PlatformThreadFactory> threadFactory(new PlatformThreadFactory());
+    ::apache::thrift::stdcxx::shared_ptr<PosixThreadFactory> threadFactory(new PosixThreadFactory());
     
     threadManager->threadFactory(threadFactory);
     threadManager->start();

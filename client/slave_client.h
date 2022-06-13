@@ -30,9 +30,9 @@ namespace rpc{namespace client{
             static std::shared_ptr<Slave_Conf> getInstance()
             {
                 if(!turnOn) {
-//                    socket->setConnTimeout(2000);
-//                    socket->setRecvTimeout(2000);
-//                    socket->setSendTimeout(2000);
+                    socket->setConnTimeout(1000);
+                    socket->setSendTimeout(1000);
+                    socket->setRecvTimeout(1000);
                     transport->open();
                     turnOn = true;
                 }
@@ -49,6 +49,25 @@ namespace rpc{namespace client{
             static ::apache::thrift::stdcxx::shared_ptr<TSocket> socket;
             static ::apache::thrift::stdcxx::shared_ptr<TTransport> transport;
             static ::apache::thrift::stdcxx::shared_ptr<TProtocol> protocol;
+        };
+        
+        class slave_client {
+        public:
+            typedef std::shared_ptr<slave_client> ptr;
+            std::shared_ptr<SlaveClient> GetSlaveClient() {
+                socket.reset((new TSocket("82.156.171.212", 9091)));
+                socket->setConnTimeout(2000);
+                socket->setSendTimeout(2000);
+                socket->setRecvTimeout(2000);
+                transport.reset((new TFramedTransport(socket)));
+                protocol.reset((new TBinaryProtocol(transport)));
+                transport->open();
+                return std::shared_ptr<SlaveClient>(new SlaveClient(protocol));
+            }
+        private:
+            ::apache::thrift::stdcxx::shared_ptr<TSocket> socket;
+            ::apache::thrift::stdcxx::shared_ptr<TTransport> transport;
+            ::apache::thrift::stdcxx::shared_ptr<TProtocol> protocol;
         };
         
         bool Slave_Conf::turnOn = false;

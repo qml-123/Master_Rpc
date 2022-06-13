@@ -18,19 +18,7 @@ using namespace apache::thrift::transport;
 using namespace ::rpc::master;
 using boost::shared_ptr;
 
-void fun1(void* x,const void* y) {
-//    print("begin");
-    log_i("%s","begin");
-    sleep(10);
-    log_i("%s", "check");
-    ::apache::thrift::stdcxx::shared_ptr<TSocket> socket(new TSocket("121.40.40.117", 9090)); //注意此处的ip和端口
-    ::apache::thrift::stdcxx::shared_ptr<TTransport> transport(new TFramedTransport(socket));
-    ::apache::thrift::stdcxx::shared_ptr<TProtocol> protocol(new TBinaryProtocol(transport));
-    transport->open();
-    
-//    print("open end");
-    MasterClient client(protocol);
-    
+void func1(MasterClient client) {
     SetRequest setRequest;
     SetResponse setResponse;
     setRequest.key = "b";
@@ -51,35 +39,32 @@ void fun1(void* x,const void* y) {
     client.Del(delResponse, delRequest);
     print("delResponse:" + delResponse.message);
     
-    transport->close();
-    
 }
 
-void fun2(void* x, const void* y) {
-    print("hello");
-    sleep(3);
+void fun2() {
+    ::apache::thrift::stdcxx::shared_ptr<TSocket> socket(new TSocket("121.40.40.117", 9090)); //注意此处的ip和端口
+    ::apache::thrift::stdcxx::shared_ptr<TTransport> transport(new TFramedTransport(socket));
+    ::apache::thrift::stdcxx::shared_ptr<TProtocol> protocol(new TBinaryProtocol(transport));
+    transport->open();
+    MasterClient client(protocol);
+    while (1) {
+        print("11");
+        func1(client);
+//        sleep(1);
+    }
+    transport->close();
 }
 
 int main() {
-    setbuf(stdout, NULL);
-    elog_init();
-    elog_set_fmt(ELOG_LVL_ASSERT, ELOG_FMT_ALL);
-    elog_set_fmt(ELOG_LVL_ERROR, ELOG_FMT_ALL);
-    elog_set_fmt(ELOG_LVL_WARN, ELOG_FMT_ALL);
-    elog_set_fmt(ELOG_LVL_INFO, ELOG_FMT_ALL);
-    elog_set_fmt(ELOG_LVL_DEBUG, ELOG_FMT_ALL & ~ELOG_FMT_FUNC);
-    elog_set_fmt(ELOG_LVL_VERBOSE, ELOG_FMT_ALL & ~ELOG_FMT_FUNC);
-    elog_start();
 //    rpc::Thread::ThreadPool::ptr threadPool(new rpc::Thread::ThreadPool(1, "12"));
 //    std::cout << threadPool->getName();
-    rpc::thread::ThreadPool::ptr threadPool(new rpc::thread::ThreadPool(5, "qml"));
-    std::function<void(void*,const void*)> cb(&fun1);
-    rpc::thread::ThreadPool::ThreadTask task(cb, 1);
-    threadPool->addTask(task);
+    rpc::thread::Thread::ptr thread1(new rpc::thread::Thread(&fun2, "1"));
+//    rpc::thread::Thread::ptr thread2(new rpc::thread::Thread(&fun2, "2"));
+    thread1->join();
+//    thread2->join();
 //    threadPool->addTask(task);
     while (1) {
-        std::string com = "count:" + std::to_string(threadPool->hasTaskCount());
-        log_i(com.c_str());
+        
         sleep(10);
     }
     return 0;

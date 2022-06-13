@@ -1,0 +1,86 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "master_rpc",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "master_client::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-master_client-Debug-60711dce7de9924e03fd.json",
+					"name" : "master_client",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "master_server::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-master_server-Debug-ea8bd029cabe1d46e8f9.json",
+					"name" : "master_server",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rpc::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rpc-Debug-af8fd7feb58c01eb0acd.json",
+					"name" : "rpc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "thread_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-thread_test-Debug-4c84909abf935974c116.json",
+					"name" : "thread_test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/root/wokespace/master_rpc/cmake-build-debug",
+		"source" : "/root/wokespace/master_rpc"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}
