@@ -3,8 +3,10 @@
 //
 
 #include "threadpool.h"
-#include "../conf/conf.h"
+#include "conf/conf.h"
 #include "thread.h"
+#include "log/elog.h"
+#include <utility>
 
 namespace rpc {namespace thread{
         
@@ -56,10 +58,10 @@ namespace rpc {namespace thread{
             }
             m_stopping = true;
             m_cond.notify_all();
+            sleep(5);
             for (size_t i = 0; i < m_threadCount; ++i) {
                 m_threads[i]->join();
             }
-            sleep(5);
         }
         
         void ThreadPool::setThis() {
@@ -73,25 +75,43 @@ namespace rpc {namespace thread{
 //                    print("waiting");
                     cond.wait();
                 }
-                
+
+//                print("work");
                 if (stopping()) {
 //                    print("exit");
                     break;
                 }
-                
-                ThreadTask task = m_taskQueue.front();
+    
+                cond.lock();
+                ThreadTask::ptr task = m_taskQueue.front();
                 m_taskQueue.pop();
-                --m_taskCount;
                 cond.unlock();
+                --m_taskCount;
                 --m_idleThreadCount;
-                task.cb(task.response, task.request);
+                if (task->call_name == "get") {
+                    task->get_cb(task->getRequest, std::move(task->client), ref(task->getObj));
+                } else if (task->call_name == "set") {
+                    task->set_cb(task->setRequest, ref(task->client), ref(task->setObj));
+                } else if (task->call_name == "del") {
+                    task->del_cb(task->delRequest, ref(task->client), ref(task->delObj));
+                } else if (task->call_name == "try") {
+                    task->try_cb(task->tryRequest, ref(task->client), ref(task->tryObj));
+                } else if (task->call_name == "finish") {
+                    task->finish_cb(task->finishRequest, ref(task->client), ref(task->finishObj));
+                } else if (task->call_name == "_finish") {
+                    task->_finish_cb(task->fv, task->call_func, task->clients);
+                } else if (task->call_name == "sendlog") {
+                    task->senlog_cb(task->binLogRequest, ref(task->m_client));
+                } else {
+                    log_e("thread call err");
+                }
                 ++m_idleThreadCount;
             }
         }
         
-        void ThreadPool::addTask(ThreadTask threadTask) {
+        void ThreadPool::addTask(ThreadTask::ptr task) {
             Condition::Cond cond(m_cond);
-            m_taskQueue.push(threadTask);
+            m_taskQueue.push(task);
             ++m_taskCount;
             cond.notify();
         }

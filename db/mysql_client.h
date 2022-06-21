@@ -4,7 +4,7 @@
 
 #ifndef MASTER_RPC_MYSQL_H
 #define MASTER_RPC_MYSQL_H
-#include "../conf/dbconf.h"
+#include "conf/dbconf.h"
 #include <mysql/mysql.h>
 
 namespace rpc {namespace db{

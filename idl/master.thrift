@@ -1,5 +1,15 @@
 namespace cpp rpc.master
 
+struct BinLogRequest {
+    1: string command,
+    2: string key,
+    3: string value,
+}
+
+struct BinLogResponse {
+    1: string message,
+}
+
 struct GetRequest{
     1: string key,
 }
@@ -31,7 +41,8 @@ struct DelResponse{
 }
 
 service Master{
-    GetResponse Get(1: GetRequest getRequest),
-    SetResponse Set(1: SetRequest setRequest),
-    DelResponse Del(1: DelRequest delRequest),
+    BinLogResponse  SendBinLog(1: BinLogRequest rsyncRequest),
+    GetResponse     Get(1: GetRequest getRequest),
+    SetResponse     Set(1: SetRequest setRequest),
+    DelResponse     Del(1: DelRequest delRequest),
 }

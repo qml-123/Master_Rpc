@@ -5,10 +5,10 @@
 #ifndef MASTER_RPC_SLAVE_CLIENT_POOL_H
 #define MASTER_RPC_SLAVE_CLIENT_POOL_H
 
-#include "../gen-cpp/Slave.h"
-#include "../conf/client_pool.h"
+#include "gen-cpp/Slave.h"
+#include "conf/client_pool.h"
 #include "slave_client.h"
-#include "../conf/conf.h"
+#include "conf/conf.h"
 
 namespace rpc{namespace client{
     class SlaveClientPool : public conf::ClientPool<SlaveClient> {

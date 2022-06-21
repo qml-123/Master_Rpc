@@ -275,7 +275,6 @@ namespace rpc{namespace thread{
             }
             
             void wait() {
-                m_locked = false;
                 m_cond.wait();
             }
             

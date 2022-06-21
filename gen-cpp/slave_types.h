@@ -21,6 +21,8 @@
 
 namespace rpc { namespace slave {
 
+class Sql;
+
 class RsyncRequest;
 
 class RsyncResponse;
@@ -33,10 +35,63 @@ class FinishRequest;
 
 class FinishResponse;
 
+typedef struct _Sql__isset {
+  _Sql__isset() : command(false), key(false), value(false) {}
+  bool command :1;
+  bool key :1;
+  bool value :1;
+} _Sql__isset;
+
+class Sql : public virtual ::apache::thrift::TBase {
+ public:
+
+  Sql(const Sql&);
+  Sql& operator=(const Sql&);
+  Sql() : command(), key(), value() {
+  }
+
+  virtual ~Sql() throw();
+  std::string command;
+  std::string key;
+  std::string value;
+
+  _Sql__isset __isset;
+
+  void __set_command(const std::string& val);
+
+  void __set_key(const std::string& val);
+
+  void __set_value(const std::string& val);
+
+  bool operator == (const Sql & rhs) const
+  {
+    if (!(command == rhs.command))
+      return false;
+    if (!(key == rhs.key))
+      return false;
+    if (!(value == rhs.value))
+      return false;
+    return true;
+  }
+  bool operator != (const Sql &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const Sql & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+  virtual void printTo(std::ostream& out) const;
+};
+
+void swap(Sql &a, Sql &b);
+
+std::ostream& operator<<(std::ostream& out, const Sql& obj);
+
 typedef struct _RsyncRequest__isset {
-  _RsyncRequest__isset() : database(false), sql_file(false), message(false) {}
-  bool database :1;
-  bool sql_file :1;
+  _RsyncRequest__isset() : sql(false), message(false) {}
+  bool sql :1;
   bool message :1;
 } _RsyncRequest__isset;
 
@@ -45,27 +100,22 @@ class RsyncRequest : public virtual ::apache::thrift::TBase {
 
   RsyncRequest(const RsyncRequest&);
   RsyncRequest& operator=(const RsyncRequest&);
-  RsyncRequest() : database(), sql_file(), message() {
+  RsyncRequest() : message() {
   }
 
   virtual ~RsyncRequest() throw();
-  std::string database;
-  std::string sql_file;
+  std::vector<Sql>  sql;
   std::string message;
 
   _RsyncRequest__isset __isset;
 
-  void __set_database(const std::string& val);
-
-  void __set_sql_file(const std::string& val);
+  void __set_sql(const std::vector<Sql> & val);
 
   void __set_message(const std::string& val);
 
   bool operator == (const RsyncRequest & rhs) const
   {
-    if (!(database == rhs.database))
-      return false;
-    if (!(sql_file == rhs.sql_file))
+    if (!(sql == rhs.sql))
       return false;
     if (!(message == rhs.message))
       return false;

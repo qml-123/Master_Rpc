@@ -3,8 +3,8 @@
 //
 
 #include "mysql_client.h"
-#include "../conf/conf.h"
-#include "../log/elog.h"
+#include "conf/conf.h"
+#include "log/elog.h"
 #include <mysql/mysql.h>
 using namespace ::rpc::conf::db;
 

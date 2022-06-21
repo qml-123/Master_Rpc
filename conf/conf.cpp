@@ -51,8 +51,8 @@ void print(const std::string& st) {
                  " thread_name=" + rpc::thread::Thread::GetName() + " " + st << std::endl;
 }
 
-const std::string set_func(bool flag) {
-    if (flag) {
+const std::string set_func(char flag) {
+    if (flag == '1') {
         return "update";
     } else {
         return "insert";

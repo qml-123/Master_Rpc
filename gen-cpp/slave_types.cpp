@@ -14,16 +14,144 @@
 namespace rpc { namespace slave {
 
 
+Sql::~Sql() throw() {
+}
+
+
+void Sql::__set_command(const std::string& val) {
+  this->command = val;
+}
+
+void Sql::__set_key(const std::string& val) {
+  this->key = val;
+}
+
+void Sql::__set_value(const std::string& val) {
+  this->value = val;
+}
+std::ostream& operator<<(std::ostream& out, const Sql& obj)
+{
+  obj.printTo(out);
+  return out;
+}
+
+
+uint32_t Sql::read(::apache::thrift::protocol::TProtocol* iprot) {
+
+  ::apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
+  uint32_t xfer = 0;
+  std::string fname;
+  ::apache::thrift::protocol::TType ftype;
+  int16_t fid;
+
+  xfer += iprot->readStructBegin(fname);
+
+  using ::apache::thrift::protocol::TProtocolException;
+
+
+  while (true)
+  {
+    xfer += iprot->readFieldBegin(fname, ftype, fid);
+    if (ftype == ::apache::thrift::protocol::T_STOP) {
+      break;
+    }
+    switch (fid)
+    {
+      case 1:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->command);
+          this->__isset.command = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->key);
+          this->__isset.key = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 3:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->value);
+          this->__isset.value = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
+    xfer += iprot->readFieldEnd();
+  }
+
+  xfer += iprot->readStructEnd();
+
+  return xfer;
+}
+
+uint32_t Sql::write(::apache::thrift::protocol::TProtocol* oprot) const {
+  uint32_t xfer = 0;
+  ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
+  xfer += oprot->writeStructBegin("Sql");
+
+  xfer += oprot->writeFieldBegin("command", ::apache::thrift::protocol::T_STRING, 1);
+  xfer += oprot->writeString(this->command);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("key", ::apache::thrift::protocol::T_STRING, 2);
+  xfer += oprot->writeString(this->key);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("value", ::apache::thrift::protocol::T_STRING, 3);
+  xfer += oprot->writeString(this->value);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldStop();
+  xfer += oprot->writeStructEnd();
+  return xfer;
+}
+
+void swap(Sql &a, Sql &b) {
+  using ::std::swap;
+  swap(a.command, b.command);
+  swap(a.key, b.key);
+  swap(a.value, b.value);
+  swap(a.__isset, b.__isset);
+}
+
+Sql::Sql(const Sql& other0) {
+  command = other0.command;
+  key = other0.key;
+  value = other0.value;
+  __isset = other0.__isset;
+}
+Sql& Sql::operator=(const Sql& other1) {
+  command = other1.command;
+  key = other1.key;
+  value = other1.value;
+  __isset = other1.__isset;
+  return *this;
+}
+void Sql::printTo(std::ostream& out) const {
+  using ::apache::thrift::to_string;
+  out << "Sql(";
+  out << "command=" << to_string(command);
+  out << ", " << "key=" << to_string(key);
+  out << ", " << "value=" << to_string(value);
+  out << ")";
+}
+
+
 RsyncRequest::~RsyncRequest() throw() {
 }
 
 
-void RsyncRequest::__set_database(const std::string& val) {
-  this->database = val;
-}
-
-void RsyncRequest::__set_sql_file(const std::string& val) {
-  this->sql_file = val;
+void RsyncRequest::__set_sql(const std::vector<Sql> & val) {
+  this->sql = val;
 }
 
 void RsyncRequest::__set_message(const std::string& val) {
@@ -58,22 +186,26 @@ uint32_t RsyncRequest::read(::apache::thrift::protocol::TProtocol* iprot) {
     switch (fid)
     {
       case 1:
-        if (ftype == ::apache::thrift::protocol::T_STRING) {
-          xfer += iprot->readString(this->database);
-          this->__isset.database = true;
+        if (ftype == ::apache::thrift::protocol::T_LIST) {
+          {
+            this->sql.clear();
+            uint32_t _size2;
+            ::apache::thrift::protocol::TType _etype5;
+            xfer += iprot->readListBegin(_etype5, _size2);
+            this->sql.resize(_size2);
+            uint32_t _i6;
+            for (_i6 = 0; _i6 < _size2; ++_i6)
+            {
+              xfer += this->sql[_i6].read(iprot);
+            }
+            xfer += iprot->readListEnd();
+          }
+          this->__isset.sql = true;
         } else {
           xfer += iprot->skip(ftype);
         }
         break;
       case 2:
-        if (ftype == ::apache::thrift::protocol::T_STRING) {
-          xfer += iprot->readString(this->sql_file);
-          this->__isset.sql_file = true;
-        } else {
-          xfer += iprot->skip(ftype);
-        }
-        break;
-      case 3:
         if (ftype == ::apache::thrift::protocol::T_STRING) {
           xfer += iprot->readString(this->message);
           this->__isset.message = true;
@@ -98,15 +230,19 @@ uint32_t RsyncRequest::write(::apache::thrift::protocol::TProtocol* oprot) const
   ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
   xfer += oprot->writeStructBegin("RsyncRequest");
 
-  xfer += oprot->writeFieldBegin("database", ::apache::thrift::protocol::T_STRING, 1);
-  xfer += oprot->writeString(this->database);
+  xfer += oprot->writeFieldBegin("sql", ::apache::thrift::protocol::T_LIST, 1);
+  {
+    xfer += oprot->writeListBegin(::apache::thrift::protocol::T_STRUCT, static_cast<uint32_t>(this->sql.size()));
+    std::vector<Sql> ::const_iterator _iter7;
+    for (_iter7 = this->sql.begin(); _iter7 != this->sql.end(); ++_iter7)
+    {
+      xfer += (*_iter7).write(oprot);
+    }
+    xfer += oprot->writeListEnd();
+  }
   xfer += oprot->writeFieldEnd();
 
-  xfer += oprot->writeFieldBegin("sql_file", ::apache::thrift::protocol::T_STRING, 2);
-  xfer += oprot->writeString(this->sql_file);
-  xfer += oprot->writeFieldEnd();
-
-  xfer += oprot->writeFieldBegin("message", ::apache::thrift::protocol::T_STRING, 3);
+  xfer += oprot->writeFieldBegin("message", ::apache::thrift::protocol::T_STRING, 2);
   xfer += oprot->writeString(this->message);
   xfer += oprot->writeFieldEnd();
 
@@ -117,30 +253,26 @@ uint32_t RsyncRequest::write(::apache::thrift::protocol::TProtocol* oprot) const
 
 void swap(RsyncRequest &a, RsyncRequest &b) {
   using ::std::swap;
-  swap(a.database, b.database);
-  swap(a.sql_file, b.sql_file);
+  swap(a.sql, b.sql);
   swap(a.message, b.message);
   swap(a.__isset, b.__isset);
 }
 
-RsyncRequest::RsyncRequest(const RsyncRequest& other0) {
-  database = other0.database;
-  sql_file = other0.sql_file;
-  message = other0.message;
-  __isset = other0.__isset;
+RsyncRequest::RsyncRequest(const RsyncRequest& other8) {
+  sql = other8.sql;
+  message = other8.message;
+  __isset = other8.__isset;
 }
-RsyncRequest& RsyncRequest::operator=(const RsyncRequest& other1) {
-  database = other1.database;
-  sql_file = other1.sql_file;
-  message = other1.message;
-  __isset = other1.__isset;
+RsyncRequest& RsyncRequest::operator=(const RsyncRequest& other9) {
+  sql = other9.sql;
+  message = other9.message;
+  __isset = other9.__isset;
   return *this;
 }
 void RsyncRequest::printTo(std::ostream& out) const {
   using ::apache::thrift::to_string;
   out << "RsyncRequest(";
-  out << "database=" << to_string(database);
-  out << ", " << "sql_file=" << to_string(sql_file);
+  out << "sql=" << to_string(sql);
   out << ", " << "message=" << to_string(message);
   out << ")";
 }
@@ -221,13 +353,13 @@ void swap(RsyncResponse &a, RsyncResponse &b) {
   swap(a.__isset, b.__isset);
 }
 
-RsyncResponse::RsyncResponse(const RsyncResponse& other2) {
-  message = other2.message;
-  __isset = other2.__isset;
+RsyncResponse::RsyncResponse(const RsyncResponse& other10) {
+  message = other10.message;
+  __isset = other10.__isset;
 }
-RsyncResponse& RsyncResponse::operator=(const RsyncResponse& other3) {
-  message = other3.message;
-  __isset = other3.__isset;
+RsyncResponse& RsyncResponse::operator=(const RsyncResponse& other11) {
+  message = other11.message;
+  __isset = other11.__isset;
   return *this;
 }
 void RsyncResponse::printTo(std::ostream& out) const {
@@ -330,15 +462,15 @@ void swap(TryRequest &a, TryRequest &b) {
   swap(a.__isset, b.__isset);
 }
 
-TryRequest::TryRequest(const TryRequest& other4) {
-  call_func = other4.call_func;
-  key = other4.key;
-  __isset = other4.__isset;
+TryRequest::TryRequest(const TryRequest& other12) {
+  call_func = other12.call_func;
+  key = other12.key;
+  __isset = other12.__isset;
 }
-TryRequest& TryRequest::operator=(const TryRequest& other5) {
-  call_func = other5.call_func;
-  key = other5.key;
-  __isset = other5.__isset;
+TryRequest& TryRequest::operator=(const TryRequest& other13) {
+  call_func = other13.call_func;
+  key = other13.key;
+  __isset = other13.__isset;
   return *this;
 }
 void TryRequest::printTo(std::ostream& out) const {
@@ -442,15 +574,15 @@ void swap(TryResponse &a, TryResponse &b) {
   swap(a.__isset, b.__isset);
 }
 
-TryResponse::TryResponse(const TryResponse& other6) {
-  message = other6.message;
-  check_key = other6.check_key;
-  __isset = other6.__isset;
+TryResponse::TryResponse(const TryResponse& other14) {
+  message = other14.message;
+  check_key = other14.check_key;
+  __isset = other14.__isset;
 }
-TryResponse& TryResponse::operator=(const TryResponse& other7) {
-  message = other7.message;
-  check_key = other7.check_key;
-  __isset = other7.__isset;
+TryResponse& TryResponse::operator=(const TryResponse& other15) {
+  message = other15.message;
+  check_key = other15.check_key;
+  __isset = other15.__isset;
   return *this;
 }
 void TryResponse::printTo(std::ostream& out) const {
@@ -571,17 +703,17 @@ void swap(FinishRequest &a, FinishRequest &b) {
   swap(a.__isset, b.__isset);
 }
 
-FinishRequest::FinishRequest(const FinishRequest& other8) {
-  connection_id = other8.connection_id;
-  message = other8.message;
-  call_func = other8.call_func;
-  __isset = other8.__isset;
+FinishRequest::FinishRequest(const FinishRequest& other16) {
+  connection_id = other16.connection_id;
+  message = other16.message;
+  call_func = other16.call_func;
+  __isset = other16.__isset;
 }
-FinishRequest& FinishRequest::operator=(const FinishRequest& other9) {
-  connection_id = other9.connection_id;
-  message = other9.message;
-  call_func = other9.call_func;
-  __isset = other9.__isset;
+FinishRequest& FinishRequest::operator=(const FinishRequest& other17) {
+  connection_id = other17.connection_id;
+  message = other17.message;
+  call_func = other17.call_func;
+  __isset = other17.__isset;
   return *this;
 }
 void FinishRequest::printTo(std::ostream& out) const {
@@ -669,13 +801,13 @@ void swap(FinishResponse &a, FinishResponse &b) {
   swap(a.__isset, b.__isset);
 }
 
-FinishResponse::FinishResponse(const FinishResponse& other10) {
-  message = other10.message;
-  __isset = other10.__isset;
+FinishResponse::FinishResponse(const FinishResponse& other18) {
+  message = other18.message;
+  __isset = other18.__isset;
 }
-FinishResponse& FinishResponse::operator=(const FinishResponse& other11) {
-  message = other11.message;
-  __isset = other11.__isset;
+FinishResponse& FinishResponse::operator=(const FinishResponse& other19) {
+  message = other19.message;
+  __isset = other19.__isset;
   return *this;
 }
 void FinishResponse::printTo(std::ostream& out) const {

@@ -3,7 +3,7 @@
 //
 
 #include "thread.h"
-#include "../conf/conf.h"
+#include "conf/conf.h"
 
 namespace rpc{namespace thread {
         static thread_local Thread* t_thread = nullptr;

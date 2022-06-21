@@ -12,7 +12,7 @@
 #include <sstream>
 #include <execinfo.h>
 #include <unistd.h>
-#include "../thread/thread.h"
+#include "thread/thread.h"
 
 #define QML_ASSERT(x) \
 	if(!(x)) { \
@@ -36,5 +36,5 @@ std::string BacktraceToString(int size, int skip, const std::string& prefix);
 pid_t GetThreadId();
 
 void print(const std::string& st);
-const std::string set_func(bool flag);
+const std::string set_func(char flag);
 #endif //MASTER_RPC_CONF_H

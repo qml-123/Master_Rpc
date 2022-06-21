@@ -3,7 +3,7 @@
 //
 
 #include "threadgroup.h"
-#include "../conf/conf.h"
+#include "conf/conf.h"
 #include <sys/epoll.h>
 #include <fcntl.h>
 #include <unistd.h>

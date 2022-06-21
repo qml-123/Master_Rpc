@@ -3964,3 +3964,552 @@ Info         [2022-06-14 01:15:02 pid:9157 tid:13991] (/root/wokespace/master_rp
 Info         [2022-06-14 01:46:15 pid:9286 tid:14066] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
 Error         [2022-06-14 01:46:17 pid:9286 tid:14066] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:202 main)THRIFT_EAGAIN (timed out)
 Info         [2022-06-14 01:46:17 pid:9286 tid:14066] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:204 main)rsync response:
+Info         [2022-06-15 23:51:35 pid:15305 tid:14031] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-15 23:51:35 pid:15305 tid:14031] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:237 main)rsync response:success
+Info         [2022-06-15 23:58:43 pid:15621 tid:14068] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-15 23:58:43 pid:15621 tid:14068] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:237 main)rsync response:success
+Info         [2022-06-16 00:02:03 pid:15731 tid:14022] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:02:03 pid:15731 tid:14022] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:237 main)rsync response:success
+Info         [2022-06-16 00:03:37 pid:15852 tid:14042] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:03:37 pid:15852 tid:14042] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:237 main)rsync response:success
+Info         [2022-06-16 00:03:44 pid:15876 tid:13993] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:03:44 pid:15852 tid:14042] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:45 Get)Get begin
+Error         [2022-06-16 00:04:28 pid:15876 tid:13993] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:04:28 pid:15876 tid:13993] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:04:35 pid:15920 tid:14031] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:04:35 pid:15920 tid:14031] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:238 main)rsync response:success
+Info         [2022-06-16 00:04:37 pid:15943 tid:13998] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:04:37 pid:15920 tid:14031] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:45 Get)Get begin
+Error         [2022-06-16 00:04:39 pid:15920 tid:14031] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:91 MGetFromSlaves)Get THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:04:39 pid:15920 tid:14031] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:94 MGetFromSlaves)Get key=b value=fail
+Info         [2022-06-16 00:04:39 pid:15920 tid:14031] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get end
+Error         [2022-06-16 00:04:39 pid:15943 tid:13998] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:04:39 pid:15943 tid:13998] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:06:56 pid:15996 tid:14025] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:06:58 pid:15996 tid:14025] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:236 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:06:58 pid:15996 tid:14025] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:238 main)rsync response:
+Info         [2022-06-16 00:07:25 pid:16065 tid:14061] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:07:27 pid:16065 tid:14061] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:236 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:07:27 pid:16065 tid:14061] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:238 main)rsync response:
+Info         [2022-06-16 00:07:28 pid:16088 tid:13970] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:07:28 pid:16065 tid:14061] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:45 Get)Get begin
+Error         [2022-06-16 00:07:30 pid:16065 tid:14061] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:91 MGetFromSlaves)Get THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:07:30 pid:16065 tid:14061] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:94 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:07:30 pid:16065 tid:14061] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get end
+Error         [2022-06-16 00:07:30 pid:16088 tid:13970] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:07:30 pid:16088 tid:13970] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:17:07 pid:16160 tid:14049] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:17:09 pid:16160 tid:14049] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:236 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:17:09 pid:16160 tid:14049] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:238 main)rsync response:
+Info         [2022-06-16 00:17:14 pid:16183 tid:14007] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:17:14 pid:16160 tid:14049] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:45 Get)Get begin
+Error         [2022-06-16 00:17:16 pid:16160 tid:14049] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:91 MGetFromSlaves)Get THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:17:16 pid:16160 tid:14049] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:94 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:17:16 pid:16160 tid:14049] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get end
+Error         [2022-06-16 00:17:16 pid:16183 tid:14007] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:17:16 pid:16183 tid:14007] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:19:57 pid:16248 tid:14024] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:19:58 pid:16252 tid:14000] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:20:00 pid:16248 tid:14024] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:236 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:20:00 pid:16248 tid:14024] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:238 main)rsync response:
+Info         [2022-06-16 00:20:00 pid:16295 tid:14003] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:20:00 pid:16248 tid:14024] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:45 Get)Get begin
+Error         [2022-06-16 00:20:03 pid:16248 tid:14023] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:91 MGetFromSlaves)Get THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:20:03 pid:16248 tid:14023] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:94 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:20:03 pid:16248 tid:14023] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get end
+Error         [2022-06-16 00:20:03 pid:16295 tid:14003] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:20:03 pid:16295 tid:14003] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:26:08 pid:16351 tid:14008] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:26:10 pid:16351 tid:14008] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:236 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:26:10 pid:16351 tid:14008] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:238 main)rsync response:
+Info         [2022-06-16 00:26:11 pid:16374 tid:14031] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:26:11 pid:16351 tid:14008] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:45 Get)Get begin
+Error         [2022-06-16 00:26:13 pid:16351 tid:14008] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:91 MGetFromSlaves)Get THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:26:13 pid:16351 tid:14008] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:94 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:26:13 pid:16351 tid:14008] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get end
+Error         [2022-06-16 00:26:13 pid:16374 tid:14031] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:26:13 pid:16374 tid:14031] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:26:50 pid:16429 tid:14010] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:26:52 pid:16429 tid:14010] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:236 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:26:52 pid:16429 tid:14010] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:238 main)rsync response:
+Info         [2022-06-16 00:26:54 pid:16452 tid:14059] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:26:54 pid:16429 tid:14010] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:45 Get)Get begin
+Error         [2022-06-16 00:26:56 pid:16429 tid:14010] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:91 MGetFromSlaves)Get THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:26:56 pid:16429 tid:14010] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:94 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:26:56 pid:16429 tid:14010] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get end
+Error         [2022-06-16 00:26:56 pid:16452 tid:14059] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:26:56 pid:16452 tid:14059] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:31:49 pid:16511 tid:14051] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:31:51 pid:16511 tid:14051] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:235 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:31:51 pid:16511 tid:14051] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:237 main)rsync response:
+Info         [2022-06-16 00:31:52 pid:16534 tid:14013] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:31:52 pid:16511 tid:14051] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:45 Get)Get begin
+Error         [2022-06-16 00:31:54 pid:16511 tid:14051] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:90 MGetFromSlaves)Get THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:31:54 pid:16511 tid:14051] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:93 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:31:54 pid:16511 tid:14051] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:94 MGetFromSlaves)Get end
+Error         [2022-06-16 00:31:54 pid:16534 tid:14013] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:31:54 pid:16534 tid:14013] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:33:21 pid:16589 tid:14041] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:33:23 pid:16589 tid:14041] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:236 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:33:23 pid:16589 tid:14041] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:238 main)rsync response:
+Info         [2022-06-16 00:33:24 pid:16612 tid:14030] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:33:24 pid:16589 tid:14041] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:45 Get)Get begin
+Info         [2022-06-16 00:33:24 pid:16589 tid:14041] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:71 MGet)valid: 1
+Error         [2022-06-16 00:33:26 pid:16589 tid:14041] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:91 MGetFromSlaves)Get THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:33:26 pid:16589 tid:14041] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:94 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:33:26 pid:16589 tid:14041] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get end
+Error         [2022-06-16 00:33:26 pid:16612 tid:14030] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:33:26 pid:16612 tid:14030] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:33:45 pid:16665 tid:13987] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:33:47 pid:16665 tid:13987] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:236 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:33:47 pid:16665 tid:13987] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:238 main)rsync response:
+Info         [2022-06-16 00:33:55 pid:16688 tid:13996] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:33:55 pid:16665 tid:13987] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:45 Get)Get begin
+Error         [2022-06-16 00:33:57 pid:16665 tid:13987] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:91 MGetFromSlaves)Get THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:33:57 pid:16665 tid:13987] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:94 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:33:57 pid:16665 tid:13987] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get end
+Error         [2022-06-16 00:33:57 pid:16688 tid:13996] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:33:57 pid:16688 tid:13996] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:34:37 pid:16742 tid:13977] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:34:39 pid:16742 tid:13977] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:236 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:34:39 pid:16742 tid:13977] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:238 main)rsync response:
+Info         [2022-06-16 00:34:41 pid:16765 tid:14043] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:34:41 pid:16742 tid:13977] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:45 Get)Get begin
+Error         [2022-06-16 00:34:43 pid:16742 tid:13977] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:91 MGetFromSlaves)Get THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:34:43 pid:16742 tid:13977] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:94 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:34:43 pid:16742 tid:13977] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get end
+Error         [2022-06-16 00:34:43 pid:16765 tid:14043] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:34:43 pid:16765 tid:14043] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:36:20 pid:16817 tid:14012] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:36:22 pid:16817 tid:14012] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:236 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:36:22 pid:16817 tid:14012] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:238 main)rsync response:
+Info         [2022-06-16 00:36:22 pid:16840 tid:13975] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:36:22 pid:16817 tid:14012] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:45 Get)Get begin
+Error         [2022-06-16 00:36:25 pid:16817 tid:14012] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:91 MGetFromSlaves)Get THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:36:25 pid:16817 tid:14012] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:94 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:36:25 pid:16817 tid:14012] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get end
+Error         [2022-06-16 00:36:25 pid:16840 tid:13975] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:36:25 pid:16840 tid:13975] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:38:07 pid:16909 tid:13977] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:38:09 pid:16909 tid:13977] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:240 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:38:09 pid:16909 tid:13977] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:242 main)rsync response:
+Info         [2022-06-16 00:38:10 pid:16932 tid:14015] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:38:10 pid:16909 tid:13977] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:45 Get)Get begin
+Error         [2022-06-16 00:38:12 pid:16909 tid:13977] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:38:12 pid:16909 tid:13977] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:98 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:38:12 pid:16909 tid:13977] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:99 MGetFromSlaves)Get end
+Error         [2022-06-16 00:38:12 pid:16932 tid:14015] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:38:12 pid:16932 tid:14015] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:39:49 pid:16975 tid:13973] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:39:51 pid:16975 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:240 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:39:51 pid:16975 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:242 main)rsync response:
+Info         [2022-06-16 00:39:59 pid:17025 tid:13994] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:39:59 pid:16975 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:45 Get)Get begin
+Error         [2022-06-16 00:40:01 pid:16975 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:40:01 pid:16975 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:98 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:40:01 pid:16975 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:99 MGetFromSlaves)Get end
+Error         [2022-06-16 00:40:01 pid:17025 tid:13994] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:40:01 pid:17025 tid:13994] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:42:43 pid:17084 tid:13968] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:42:45 pid:17084 tid:13968] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:240 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:42:45 pid:17084 tid:13968] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:242 main)rsync response:
+Info         [2022-06-16 00:42:46 pid:17107 tid:14058] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:42:46 pid:17084 tid:13968] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:45 Get)Get begin
+Error         [2022-06-16 00:42:48 pid:17084 tid:13968] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:42:48 pid:17084 tid:13968] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:98 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:42:48 pid:17084 tid:13968] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:99 MGetFromSlaves)Get end
+Error         [2022-06-16 00:42:48 pid:17107 tid:14058] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:42:48 pid:17107 tid:14058] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:43:13 pid:17159 tid:13990] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:43:15 pid:17159 tid:13990] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:240 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:43:15 pid:17159 tid:13990] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:242 main)rsync response:
+Info         [2022-06-16 00:43:16 pid:17182 tid:14060] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:43:16 pid:17159 tid:13990] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:45 Get)Get begin
+Info         [2022-06-16 00:43:16 pid:17159 tid:13990] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:71 MGet)valid: 1
+Error         [2022-06-16 00:43:18 pid:17159 tid:13990] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:43:18 pid:17159 tid:13990] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:98 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:43:18 pid:17159 tid:13990] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:99 MGetFromSlaves)Get end
+Error         [2022-06-16 00:43:18 pid:17182 tid:14060] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:43:18 pid:17182 tid:14060] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:46:02 pid:17243 tid:14002] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:46:05 pid:17243 tid:14002] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:240 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:46:05 pid:17243 tid:14002] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:242 main)rsync response:
+Info         [2022-06-16 00:46:05 pid:17266 tid:13979] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:46:05 pid:17243 tid:14002] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:45 Get)Get begin
+Info         [2022-06-16 00:46:05 pid:17243 tid:14002] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:71 MGet)valid: 1
+Error         [2022-06-16 00:46:07 pid:17243 tid:14002] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:46:07 pid:17243 tid:14002] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:98 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:46:07 pid:17243 tid:14002] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:99 MGetFromSlaves)Get end
+Error         [2022-06-16 00:46:08 pid:17266 tid:13979] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:46:08 pid:17266 tid:13979] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:46:58 pid:17319 tid:14022] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:47:01 pid:17319 tid:14022] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:235 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:47:01 pid:17319 tid:14022] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:237 main)rsync response:
+Info         [2022-06-16 00:47:29 pid:17375 tid:14071] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:47:32 pid:17375 tid:14071] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:235 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:47:32 pid:17375 tid:14071] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:237 main)rsync response:
+Info         [2022-06-16 00:47:46 pid:17398 tid:13975] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:47:46 pid:17375 tid:14071] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:40 Get)Get begin
+Info         [2022-06-16 00:47:46 pid:17375 tid:14071] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:66 MGet)valid: 1
+Error         [2022-06-16 00:47:48 pid:17375 tid:14071] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:90 MGetFromSlaves)Get THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:47:48 pid:17375 tid:14071] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:93 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:47:48 pid:17375 tid:14071] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:94 MGetFromSlaves)Get end
+Error         [2022-06-16 00:47:49 pid:17398 tid:13975] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:47:49 pid:17398 tid:13975] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:52:25 pid:17467 tid:14067] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:52:27 pid:17467 tid:14067] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:235 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:52:27 pid:17467 tid:14067] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:237 main)rsync response:
+Info         [2022-06-16 00:52:28 pid:17490 tid:14030] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:52:28 pid:17467 tid:14067] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:40 Get)Get begin
+Info         [2022-06-16 00:52:28 pid:17467 tid:14067] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:66 MGet)valid: 1
+Error         [2022-06-16 00:52:30 pid:17467 tid:14067] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:90 MGetFromSlaves)Get THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:52:30 pid:17467 tid:14067] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:93 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:52:30 pid:17467 tid:14067] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:94 MGetFromSlaves)Get end
+Error         [2022-06-16 00:52:30 pid:17490 tid:14030] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:52:30 pid:17490 tid:14030] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:55:49 pid:17553 tid:14036] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:55:51 pid:17553 tid:14036] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:237 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:55:51 pid:17553 tid:14036] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:239 main)rsync response:
+Info         [2022-06-16 00:55:52 pid:17576 tid:14023] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:55:52 pid:17553 tid:14036] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:40 Get)Get begin
+Error         [2022-06-16 00:55:54 pid:17553 tid:14036] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:91 MGetFromSlaves)Get THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:55:54 pid:17553 tid:14036] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:94 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:55:54 pid:17553 tid:14036] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get end
+Error         [2022-06-16 00:55:54 pid:17576 tid:14023] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:55:54 pid:17576 tid:14023] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:56:20 pid:17628 tid:14041] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:56:22 pid:17628 tid:14041] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:237 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:56:22 pid:17628 tid:14041] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:239 main)rsync response:
+Info         [2022-06-16 00:57:29 pid:17679 tid:14004] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:57:29 pid:17679 tid:14004] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:237 main)rsync response:success
+Info         [2022-06-16 00:57:29 pid:17702 tid:14038] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:57:29 pid:17679 tid:14004] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:40 Get)Get begin
+Info         [2022-06-16 00:57:29 pid:17679 tid:14004] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:66 MGet)valid: 1
+Info         [2022-06-16 00:57:29 pid:17679 tid:14004] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:93 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:57:29 pid:17679 tid:14004] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:94 MGetFromSlaves)Get end
+Error         [2022-06-16 00:57:30 pid:17702 tid:14038] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:57:30 pid:17702 tid:14038] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:57:58 pid:17755 tid:14061] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:58:00 pid:17755 tid:14061] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:236 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:58:00 pid:17755 tid:14061] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:238 main)rsync response:
+Info         [2022-06-16 00:58:01 pid:17778 tid:14026] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:58:01 pid:17755 tid:14061] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:40 Get)Get begin
+Info         [2022-06-16 00:58:01 pid:17755 tid:14061] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:66 MGet)valid: 1
+Info         [2022-06-16 00:58:01 pid:17755 tid:14061] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:93 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:58:01 pid:17755 tid:14061] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:94 MGetFromSlaves)Get end
+Error         [2022-06-16 00:58:01 pid:17778 tid:14026] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 00:58:01 pid:17778 tid:14026] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 00:59:15 pid:17832 tid:13990] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 00:59:17 pid:17832 tid:13990] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 00:59:17 pid:17832 tid:13990] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:243 main)rsync response:
+Info         [2022-06-16 00:59:17 pid:17855 tid:14028] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 00:59:17 pid:17832 tid:13990] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:40 Get)Get begin
+Info         [2022-06-16 00:59:17 pid:17832 tid:13990] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:66 MGet)valid: 1
+Info         [2022-06-16 00:59:17 pid:17832 tid:13990] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:94 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 00:59:17 pid:17832 tid:13990] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get end
+Error         [2022-06-16 00:59:17 pid:17832 tid:13990] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:99 MGetFromSlaves)std::future_error: No associated state
+Info         [2022-06-16 00:59:17 pid:17832 tid:13990] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:101 MGetFromSlaves)set_value end
+Error         [2022-06-16 01:00:47 pid:17855 tid:14028] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-16 01:00:47 pid:17855 tid:14028] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-16 01:00:54 pid:17901 tid:13966] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 01:00:56 pid:17901 tid:13966] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 01:00:56 pid:17901 tid:13966] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:243 main)rsync response:
+Info         [2022-06-16 01:00:57 pid:17924 tid:14068] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 01:00:57 pid:17901 tid:13966] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:40 Get)Get begin
+Info         [2022-06-16 01:00:57 pid:17901 tid:13966] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:66 MGet)valid: 1
+Info         [2022-06-16 01:00:57 pid:17901 tid:13966] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:94 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 01:00:57 pid:17901 tid:13966] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get end
+Info         [2022-06-16 01:00:57 pid:17901 tid:13966] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:101 MGetFromSlaves)set_value end
+Info         [2022-06-16 01:00:57 pid:17924 tid:14068] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]:fail [key]= b value=
+Info         [2022-06-16 01:03:02 pid:17982 tid:13972] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 01:03:04 pid:17982 tid:13972] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:243 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 01:03:04 pid:17982 tid:13972] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:245 main)rsync response:
+Info         [2022-06-16 01:03:05 pid:18005 tid:14029] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 01:03:05 pid:17982 tid:13972] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:40 Get)Get begin
+Info         [2022-06-16 01:03:05 pid:17982 tid:13972] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:66 MGet)valid: 1
+Info         [2022-06-16 01:03:06 pid:17982 tid:13972] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:97 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 01:03:06 pid:17982 tid:13972] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:98 MGetFromSlaves)Get end
+Info         [2022-06-16 01:03:06 pid:17982 tid:13972] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:85 MGet)message: failvalue: 
+Info         [2022-06-16 01:03:06 pid:18005 tid:14029] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]:fail [key]= b value=
+Info         [2022-06-16 01:03:21 pid:18049 tid:14043] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-16 01:03:23 pid:18049 tid:14043] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:243 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-16 01:03:23 pid:18049 tid:14043] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:245 main)rsync response:
+Info         [2022-06-16 01:03:24 pid:18072 tid:13970] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-16 01:03:24 pid:18049 tid:14043] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:40 Get)Get begin
+Info         [2022-06-16 01:03:24 pid:18049 tid:14043] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:66 MGet)valid: 1
+Info         [2022-06-16 01:03:24 pid:18049 tid:14043] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:97 MGetFromSlaves)Get key=b message=fail
+Info         [2022-06-16 01:03:24 pid:18049 tid:14043] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:98 MGetFromSlaves)Get end
+Info         [2022-06-16 01:03:24 pid:18049 tid:14043] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:85 MGet)message: fail, value: 
+Info         [2022-06-16 01:03:24 pid:18072 tid:13970] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]:fail [key]= b value=
+Info         [2022-06-17 00:29:30 pid:20306 tid:13998] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 00:29:31 pid:20306 tid:13998] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:381 main)rsync response:success
+Info         [2022-06-17 00:29:47 pid:20413 tid:14030] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 00:29:47 pid:20306 tid:13998] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:71 MGet)valid: 1
+Info         [2022-06-17 00:29:47 pid:20306 tid:13998] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get Begin
+Info         [2022-06-17 00:29:47 pid:20306 tid:13998] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:105 MGetFromSlaves)Get end
+Info         [2022-06-17 00:29:47 pid:20306 tid:13998] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get fail, value=from 82.156.171.212:9091
+Info         [2022-06-17 00:29:47 pid:20306 tid:13998] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:44 Get)message: fail, value: 
+Info         [2022-06-17 00:29:47 pid:20413 tid:14030] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]:fail [key]= b value=
+Info         [2022-06-17 00:30:37 pid:20512 tid:14052] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 00:30:37 pid:20306 tid:13998] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:279 MTryFromSlave)Get end
+Info         [2022-06-17 00:30:37 pid:20306 tid:13998] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:148 MTry)Try, key=bnot exist from 82.156.171.212:9091
+Info         [2022-06-17 00:30:37 pid:20306 tid:13998] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:234 MSetFromSlave)Get end
+Info         [2022-06-17 00:30:37 pid:20306 tid:13998] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:189 MSet)Set success from 82.156.171.212:9091
+Error         [2022-06-17 00:30:38 pid:20512 tid:14052] (/root/wokespace/master_rpc/client/Master_client.cpp:45 main)No more data to read.
+Info         [2022-06-17 00:30:38 pid:20512 tid:14052] (/root/wokespace/master_rpc/client/Master_client.cpp:47 main)setResponse:
+Error         [2022-06-17 00:30:38 pid:20512 tid:14052] (/root/wokespace/master_rpc/client/Master_client.cpp:56 main)No more data to read.
+Info         [2022-06-17 00:30:38 pid:20512 tid:14052] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]: [key]= b value=
+Info         [2022-06-17 00:32:48 pid:20565 tid:14019] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 00:32:48 pid:20565 tid:14019] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:381 main)rsync response:success
+Info         [2022-06-17 00:32:53 pid:20588 tid:13967] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 00:32:53 pid:20565 tid:14019] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:279 MTryFromSlave)Get end
+Info         [2022-06-17 00:32:53 pid:20565 tid:14019] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:148 MTry)Try, key=bnot exist from 82.156.171.212:9091
+Info         [2022-06-17 00:32:53 pid:20565 tid:14019] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:234 MSetFromSlave)Get end
+Info         [2022-06-17 00:32:53 pid:20565 tid:14019] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:189 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-17 00:32:53 pid:20565 tid:14019] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:218 MFinishFromSlave)Get end
+Info         [2022-06-17 00:32:53 pid:20565 tid:14019] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:266 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-17 00:32:53 pid:20588 tid:13967] (/root/wokespace/master_rpc/client/Master_client.cpp:47 main)setResponse:success
+Info         [2022-06-17 00:32:53 pid:20565 tid:14019] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:71 MGet)valid: 1
+Info         [2022-06-17 00:32:53 pid:20565 tid:14019] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get Begin
+Info         [2022-06-17 00:32:53 pid:20565 tid:14019] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:105 MGetFromSlaves)Get end
+Info         [2022-06-17 00:32:53 pid:20565 tid:14019] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get fail, value=from 82.156.171.212:9091
+Info         [2022-06-17 00:32:53 pid:20565 tid:14019] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:44 Get)message: fail, value: 
+Info         [2022-06-17 00:32:53 pid:20588 tid:13967] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]:fail [key]= b value=
+Info         [2022-06-17 00:37:34 pid:20638 tid:14069] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 00:37:35 pid:20638 tid:14069] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:384 main)rsync response:success
+Info         [2022-06-17 00:37:36 pid:20661 tid:13977] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 00:37:36 pid:20638 tid:14069] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:274 MTryFromSlave)Try begin
+Info         [2022-06-17 00:37:36 pid:20638 tid:14069] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:287 MTryFromSlave)Try end
+Info         [2022-06-17 00:37:36 pid:20638 tid:14069] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:148 MTry)Try, key=bnot exist from 82.156.171.212:9091
+Info         [2022-06-17 00:37:36 pid:20638 tid:14069] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:228 MSetFromSlave)Set begin
+Info         [2022-06-17 00:37:36 pid:20638 tid:14069] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:236 MSetFromSlave)Set end
+Info         [2022-06-17 00:37:36 pid:20638 tid:14069] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:189 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-17 00:37:36 pid:20638 tid:14069] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:211 MFinishFromSlave)Finish begin
+Info         [2022-06-17 00:37:36 pid:20638 tid:14069] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:219 MFinishFromSlave)Finish end
+Info         [2022-06-17 00:37:36 pid:20638 tid:14069] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:268 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-17 00:37:36 pid:20661 tid:13977] (/root/wokespace/master_rpc/client/Master_client.cpp:47 main)setResponse:success
+Info         [2022-06-17 00:37:36 pid:20638 tid:14069] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:71 MGet)valid: 1
+Info         [2022-06-17 00:37:36 pid:20638 tid:14069] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:95 MGetFromSlaves)Get begin
+Info         [2022-06-17 00:37:36 pid:20638 tid:14069] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:105 MGetFromSlaves)Get end
+Info         [2022-06-17 00:37:36 pid:20638 tid:14069] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get fail, value=from 82.156.171.212:9091
+Info         [2022-06-17 00:37:36 pid:20638 tid:14069] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:44 Get)message: fail, value: 
+Info         [2022-06-17 00:37:36 pid:20661 tid:13977] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]:fail [key]= b value=
+Info         [2022-06-17 00:40:44 pid:20711 tid:14001] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-17 00:40:46 pid:20711 tid:14001] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:375 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-17 00:40:46 pid:20711 tid:14001] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:377 main)rsync response:
+Info         [2022-06-17 00:40:47 pid:20734 tid:14031] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 00:40:47 pid:20711 tid:14001] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:267 MTryFromSlave)Try begin
+Error         [2022-06-17 00:40:49 pid:20711 tid:14001] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:272 MTryFromSlave)Try THRIFT_EAGAIN (timed out)
+Info         [2022-06-17 00:40:49 pid:20711 tid:14001] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:280 MTryFromSlave)Try end
+Info         [2022-06-17 00:40:49 pid:20711 tid:14001] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:145 MTry)Try, key=b not exist from 82.156.171.212:9091
+Error         [2022-06-17 00:40:51 pid:20711 tid:14001] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:227 MSetFromSlave)Set THRIFT_EAGAIN (timed out)
+Info         [2022-06-17 00:40:51 pid:20711 tid:14001] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:186 MSet)Set fail from 82.156.171.212:9091
+Error         [2022-06-17 00:40:53 pid:20711 tid:14001] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:212 MFinishFromSlave)Finish THRIFT_EAGAIN (timed out)
+Info         [2022-06-17 00:40:53 pid:20711 tid:14001] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:261 MFinish)finish fail from 82.156.171.212:9091
+Info         [2022-06-17 00:40:53 pid:20734 tid:14031] (/root/wokespace/master_rpc/client/Master_client.cpp:47 main)setResponse:fail
+Info         [2022-06-17 00:40:54 pid:20711 tid:14001] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:71 MGet)valid: 1
+Info         [2022-06-17 00:40:54 pid:20711 tid:14001] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get fail, value=from 82.156.171.212:9091
+Info         [2022-06-17 00:40:54 pid:20711 tid:14001] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:44 Get)message: fail, value: 
+Info         [2022-06-17 00:40:54 pid:20734 tid:14031] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]:fail [key]= b value=
+Info         [2022-06-17 00:42:36 pid:20778 tid:13973] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 00:42:36 pid:20778 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:375 main)rsync response:success
+Info         [2022-06-17 00:42:37 pid:20801 tid:14005] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 00:42:37 pid:20778 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:145 MTry)Try, key=b not exist from 82.156.171.212:9091
+Info         [2022-06-17 00:42:37 pid:20778 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:186 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-17 00:42:37 pid:20778 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:261 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-17 00:42:37 pid:20801 tid:14005] (/root/wokespace/master_rpc/client/Master_client.cpp:47 main)setResponse:success
+Info         [2022-06-17 00:42:37 pid:20778 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:71 MGet)valid: 1
+Info         [2022-06-17 00:42:37 pid:20778 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get fail, value=from 82.156.171.212:9091
+Info         [2022-06-17 00:42:37 pid:20778 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:44 Get)message: fail, value: 
+Info         [2022-06-17 00:42:37 pid:20801 tid:14005] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]:fail [key]= b value=
+Info         [2022-06-17 00:43:02 pid:20817 tid:13974] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 00:43:02 pid:20778 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:145 MTry)Try, key=b not exist from 82.156.171.212:9091
+Info         [2022-06-17 00:43:02 pid:20778 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:186 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-17 00:43:02 pid:20778 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:261 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-17 00:43:02 pid:20817 tid:13974] (/root/wokespace/master_rpc/client/Master_client.cpp:47 main)setResponse:success
+Info         [2022-06-17 00:43:02 pid:20778 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:71 MGet)valid: 1
+Info         [2022-06-17 00:43:02 pid:20778 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get fail, value=from 82.156.171.212:9091
+Info         [2022-06-17 00:43:02 pid:20778 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:44 Get)message: fail, value: 
+Info         [2022-06-17 00:43:02 pid:20817 tid:13974] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]:fail [key]= b value=
+Info         [2022-06-17 00:43:04 pid:20832 tid:14071] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 00:43:04 pid:20778 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:145 MTry)Try, key=b not exist from 82.156.171.212:9091
+Info         [2022-06-17 00:43:04 pid:20778 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:186 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-17 00:43:04 pid:20778 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:261 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-17 00:43:04 pid:20832 tid:14071] (/root/wokespace/master_rpc/client/Master_client.cpp:47 main)setResponse:success
+Info         [2022-06-17 00:43:04 pid:20778 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:71 MGet)valid: 1
+Info         [2022-06-17 00:43:04 pid:20778 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get fail, value=from 82.156.171.212:9091
+Info         [2022-06-17 00:43:04 pid:20778 tid:13973] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:44 Get)message: fail, value: 
+Info         [2022-06-17 00:43:04 pid:20832 tid:14071] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]:fail [key]= b value=
+Info         [2022-06-17 00:44:28 pid:20876 tid:14016] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-17 00:44:31 pid:20876 tid:14016] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:373 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-17 00:44:31 pid:20876 tid:14016] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:375 main)rsync response:
+Info         [2022-06-17 00:44:32 pid:20899 tid:14061] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-17 00:44:34 pid:20876 tid:14016] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:271 MTryFromSlave)Try THRIFT_EAGAIN (timed out)
+Info         [2022-06-17 00:44:34 pid:20876 tid:14016] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:145 MTry)Try, key=b not exist from 82.156.171.212:9091
+Error         [2022-06-17 00:44:36 pid:20876 tid:14016] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:227 MSetFromSlave)Set THRIFT_EAGAIN (timed out)
+Info         [2022-06-17 00:44:36 pid:20876 tid:14016] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:186 MSet)Set fail from 82.156.171.212:9091
+Error         [2022-06-17 00:44:38 pid:20876 tid:14016] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:212 MFinishFromSlave)Finish THRIFT_EAGAIN (timed out)
+Info         [2022-06-17 00:44:38 pid:20876 tid:14016] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:261 MFinish)finish fail from 82.156.171.212:9091
+Info         [2022-06-17 00:44:38 pid:20899 tid:14061] (/root/wokespace/master_rpc/client/Master_client.cpp:47 main)setResponse:fail
+Info         [2022-06-17 00:44:38 pid:20876 tid:14016] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:71 MGet)valid: 1
+Info         [2022-06-17 00:44:38 pid:20876 tid:14016] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get fail, value=from 82.156.171.212:9091
+Info         [2022-06-17 00:44:38 pid:20876 tid:14016] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:44 Get)message: fail, value: 
+Info         [2022-06-17 00:44:38 pid:20899 tid:14061] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]:fail [key]= b value=
+Info         [2022-06-17 00:45:17 pid:20934 tid:14031] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 00:45:18 pid:20934 tid:14031] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:375 main)rsync response:success
+Info         [2022-06-17 00:45:19 pid:20957 tid:13965] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 00:45:19 pid:20934 tid:14031] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:145 MTry)Try, key=b not exist from 82.156.171.212:9091
+Info         [2022-06-17 00:45:19 pid:20934 tid:14031] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:186 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-17 00:45:19 pid:20934 tid:14031] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:261 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-17 00:45:19 pid:20957 tid:13965] (/root/wokespace/master_rpc/client/Master_client.cpp:47 main)setResponse:success
+Info         [2022-06-17 00:45:19 pid:20934 tid:14031] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:71 MGet)valid: 1
+Info         [2022-06-17 00:45:19 pid:20934 tid:14031] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get fail, value=from 82.156.171.212:9091
+Info         [2022-06-17 00:45:19 pid:20934 tid:14031] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:44 Get)message: fail, value: 
+Info         [2022-06-17 00:45:19 pid:20957 tid:13965] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]:fail [key]= b value=
+Info         [2022-06-17 00:55:22 pid:21007 tid:13991] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 00:55:22 pid:21007 tid:13991] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:374 main)rsync response:success
+Info         [2022-06-17 00:55:31 pid:21030 tid:14007] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 00:55:31 pid:21007 tid:13991] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:145 MTry)Try, key=b not exist from 82.156.171.212:9091
+Info         [2022-06-17 00:55:31 pid:21007 tid:13991] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:185 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-17 00:55:31 pid:21007 tid:13991] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:260 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-17 00:55:31 pid:21030 tid:14007] (/root/wokespace/master_rpc/client/Master_client.cpp:47 main)setResponse:success
+Info         [2022-06-17 00:55:31 pid:21007 tid:13991] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:71 MGet)valid: 1
+Info         [2022-06-17 00:55:31 pid:21007 tid:13991] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get fail, value=from 82.156.171.212:9091
+Info         [2022-06-17 00:55:31 pid:21007 tid:13991] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:44 Get)Get message: fail, value: 
+Info         [2022-06-17 00:55:31 pid:21030 tid:14007] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]:fail [key]= b value=
+Info         [2022-06-17 01:00:44 pid:21105 tid:14035] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-17 01:00:46 pid:21105 tid:14035] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:373 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-17 01:00:46 pid:21105 tid:14035] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:375 main)rsync response:
+Info         [2022-06-17 01:00:50 pid:21128 tid:14013] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-17 01:00:52 pid:21105 tid:14035] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:271 MTryFromSlave)Try THRIFT_EAGAIN (timed out)
+Info         [2022-06-17 01:00:52 pid:21105 tid:14035] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:145 MTry)Try, key=b not exist from 82.156.171.212:9091
+Error         [2022-06-17 01:00:54 pid:21105 tid:14035] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:227 MSetFromSlave)Set THRIFT_EAGAIN (timed out)
+Info         [2022-06-17 01:00:54 pid:21105 tid:14035] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:185 MSet)Set fail from 82.156.171.212:9091
+Error         [2022-06-17 01:00:56 pid:21105 tid:14035] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:212 MFinishFromSlave)Finish THRIFT_EAGAIN (timed out)
+Info         [2022-06-17 01:00:56 pid:21105 tid:14035] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:261 MFinish)finish fail from 82.156.171.212:9091
+Info         [2022-06-17 01:00:56 pid:21128 tid:14013] (/root/wokespace/master_rpc/client/Master_client.cpp:47 main)setResponse:fail
+Info         [2022-06-17 01:00:56 pid:21105 tid:14035] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:71 MGet)valid: 1
+Info         [2022-06-17 01:00:56 pid:21105 tid:14035] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get fail, value=from 82.156.171.212:9091
+Info         [2022-06-17 01:00:56 pid:21105 tid:14035] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:44 Get)Get message: fail, value: 
+Info         [2022-06-17 01:00:56 pid:21128 tid:14013] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]:fail [key]= b value=
+Info         [2022-06-17 01:01:44 pid:21176 tid:13987] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 01:01:44 pid:21176 tid:13987] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:375 main)rsync response:success
+Info         [2022-06-17 01:01:47 pid:21199 tid:14034] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 01:01:47 pid:21176 tid:13987] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:145 MTry)Try, key=b not exist from 82.156.171.212:9091
+Info         [2022-06-17 01:01:47 pid:21176 tid:13987] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:185 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-17 01:01:47 pid:21176 tid:13987] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:261 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-17 01:01:47 pid:21199 tid:14034] (/root/wokespace/master_rpc/client/Master_client.cpp:47 main)setResponse:success
+Info         [2022-06-17 01:01:47 pid:21176 tid:13987] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:71 MGet)valid: 1
+Info         [2022-06-17 01:01:47 pid:21176 tid:13987] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get fail, value=from 82.156.171.212:9091
+Info         [2022-06-17 01:01:47 pid:21176 tid:13987] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:44 Get)Get message: fail, value: 
+Info         [2022-06-17 01:01:47 pid:21199 tid:14034] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]:fail [key]= b value=
+Info         [2022-06-17 01:03:08 pid:21243 tid:13992] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 01:03:09 pid:21247 tid:14003] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-17 01:03:10 pid:21243 tid:13992] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:373 main)THRIFT_EAGAIN (timed out)
+Info         [2022-06-17 01:03:10 pid:21243 tid:13992] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:375 main)rsync response:
+Info         [2022-06-17 01:03:11 pid:21292 tid:14025] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-17 01:03:13 pid:21243 tid:13992] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:271 MTryFromSlave)Try THRIFT_EAGAIN (timed out)
+Info         [2022-06-17 01:03:13 pid:21243 tid:13992] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:145 MTry)Try, key=b not exist from 82.156.171.212:9091
+Info         [2022-06-17 01:03:13 pid:21243 tid:13992] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:163 MSet)exist: 0
+Error         [2022-06-17 01:03:15 pid:21243 tid:13992] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:227 MSetFromSlave)Set THRIFT_EAGAIN (timed out)
+Info         [2022-06-17 01:03:15 pid:21243 tid:13992] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:185 MSet)Set fail from 82.156.171.212:9091
+Error         [2022-06-17 01:03:17 pid:21243 tid:13992] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:212 MFinishFromSlave)Finish THRIFT_EAGAIN (timed out)
+Info         [2022-06-17 01:03:17 pid:21243 tid:13992] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:261 MFinish)finish fail from 82.156.171.212:9091
+Info         [2022-06-17 01:03:17 pid:21292 tid:14025] (/root/wokespace/master_rpc/client/Master_client.cpp:47 main)setResponse:fail
+Info         [2022-06-17 01:03:17 pid:21243 tid:13992] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:71 MGet)valid: 1
+Info         [2022-06-17 01:03:17 pid:21243 tid:13992] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get fail, value=from 82.156.171.212:9091
+Info         [2022-06-17 01:03:17 pid:21243 tid:13992] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:44 Get)Get message: fail, value: 
+Info         [2022-06-17 01:03:17 pid:21292 tid:14025] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]:fail [key]= b value=
+Info         [2022-06-17 01:03:37 pid:21327 tid:14056] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 01:03:37 pid:21327 tid:14056] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:375 main)rsync response:success
+Info         [2022-06-17 01:03:41 pid:21350 tid:13974] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 01:03:41 pid:21327 tid:14056] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:145 MTry)Try, key=b not exist from 82.156.171.212:9091
+Info         [2022-06-17 01:03:41 pid:21327 tid:14056] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:163 MSet)exist: 0
+Info         [2022-06-17 01:03:41 pid:21327 tid:14056] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:185 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-17 01:03:41 pid:21327 tid:14056] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:261 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-17 01:03:41 pid:21350 tid:13974] (/root/wokespace/master_rpc/client/Master_client.cpp:47 main)setResponse:success
+Info         [2022-06-17 01:03:41 pid:21327 tid:14056] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:71 MGet)valid: 1
+Info         [2022-06-17 01:03:41 pid:21327 tid:14056] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get fail, value=from 82.156.171.212:9091
+Info         [2022-06-17 01:03:41 pid:21327 tid:14056] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:44 Get)Get message: fail, value: 
+Info         [2022-06-17 01:03:41 pid:21350 tid:13974] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]:fail [key]= b value=
+Info         [2022-06-17 01:05:07 pid:21394 tid:13972] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 01:05:07 pid:21394 tid:13972] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:376 main)rsync response:success
+Info         [2022-06-17 01:05:08 pid:21417 tid:14049] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 01:05:08 pid:21394 tid:13972] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:145 MTry)Try, key=b not exist from 82.156.171.212:9091
+Info         [2022-06-17 01:05:08 pid:21394 tid:13972] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:163 MSet)exist: 0
+Info         [2022-06-17 01:05:08 pid:21394 tid:13972] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:185 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-17 01:05:08 pid:21394 tid:13972] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:190 MSet)call_func:insert
+Info         [2022-06-17 01:05:08 pid:21394 tid:13972] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:262 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-17 01:05:08 pid:21417 tid:14049] (/root/wokespace/master_rpc/client/Master_client.cpp:47 main)setResponse:success
+Info         [2022-06-17 01:05:08 pid:21394 tid:13972] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:71 MGet)valid: 1
+Info         [2022-06-17 01:05:08 pid:21394 tid:13972] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get fail, value=from 82.156.171.212:9091
+Info         [2022-06-17 01:05:08 pid:21394 tid:13972] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:44 Get)Get message: fail, value: 
+Info         [2022-06-17 01:05:08 pid:21417 tid:14049] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]:fail [key]= b value=
+Info         [2022-06-17 01:10:24 pid:21466 tid:14054] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 01:10:24 pid:21466 tid:14054] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:376 main)rsync response:success
+Info         [2022-06-17 01:10:25 pid:21489 tid:14008] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-17 01:10:25 pid:21466 tid:14054] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:145 MTry)Try, key=b not exist from 82.156.171.212:9091
+Info         [2022-06-17 01:10:25 pid:21466 tid:14054] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:163 MSet)exist: 0
+Info         [2022-06-17 01:10:25 pid:21466 tid:14054] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:187 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-17 01:10:25 pid:21466 tid:14054] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:262 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-17 01:10:25 pid:21489 tid:14008] (/root/wokespace/master_rpc/client/Master_client.cpp:47 main)setResponse:success
+Info         [2022-06-17 01:10:25 pid:21466 tid:14054] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:71 MGet)valid: 1
+Info         [2022-06-17 01:10:25 pid:21466 tid:14054] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get success, value=qmlfrom 82.156.171.212:9091
+Info         [2022-06-17 01:10:25 pid:21466 tid:14054] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:44 Get)Get message: success, value: qml
+Info         [2022-06-17 01:10:25 pid:21489 tid:14008] (/root/wokespace/master_rpc/client/Master_client.cpp:59 main)getResponse:[message]:success [key]= b value=qml
+Info         [2022-06-17 22:30:10 pid:26079 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:48 MGet)MGet begin
+Info         [2022-06-17 22:30:10 pid:26079 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get fail, value=from 82.156.171.212:9091
+Info         [2022-06-17 22:30:10 pid:26079 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:44 Get)Get message: fail, value: 
+Info         [2022-06-17 22:30:14 pid:26079 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:139 MTry)Try, key=k not exist from 82.156.171.212:9091
+Info         [2022-06-17 22:30:14 pid:26079 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:179 MSet)exist: 0
+Info         [2022-06-17 22:30:14 pid:26079 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:238 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-17 22:30:14 pid:26079 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:203 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-17 22:30:14 pid:26079 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:221 MSet)end set
+Info         [2022-06-17 22:30:14 pid:26079 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:325 MMFinish)MMFinish begin
+Info         [2022-06-17 22:30:14 pid:26079 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:327 MMFinish)1
+Info         [2022-06-17 22:30:14 pid:26079 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:335 MFinish)MFinish begin
+Info         [2022-06-17 22:30:14 pid:26079 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:364 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-17 22:30:14 pid:26079 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:358 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-17 22:30:16 pid:26079 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:48 MGet)MGet begin
+Info         [2022-06-17 22:30:16 pid:26079 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get success, value=pfrom 82.156.171.212:9091
+Info         [2022-06-17 22:30:16 pid:26079 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:44 Get)Get message: success, value: p
+Info         [2022-06-18 17:38:47 pid:32056 tid:14051] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-18 17:38:47 pid:32056 tid:14051] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:410 main)rsync response:success
+Info         [2022-06-18 18:01:27 pid:33308 tid:14027] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-18 18:01:27 pid:33308 tid:14027] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:410 main)rsync response:success
+Info         [2022-06-18 18:02:22 pid:33395 tid:13963] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-18 18:02:22 pid:33395 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:410 main)rsync response:success
+Info         [2022-06-18 18:41:48 pid:33612 tid:14041] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-18 18:41:48 pid:33612 tid:14041] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:410 main)rsync response:success
+Info         [2022-06-18 20:34:12 pid:33963 tid:13989] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-18 20:34:12 pid:33963 tid:13989] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:410 main)rsync response:success
+Info         [2022-06-18 20:34:30 pid:33963 tid:13989] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:139 MTry)Try, key=k  exist from 82.156.171.212:9091
+Info         [2022-06-18 20:34:30 pid:33963 tid:13989] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:139 MTry)Try, key=k not exist from 182.92.68.121:9091
+Info         [2022-06-18 20:34:30 pid:33963 tid:13989] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:179 MSet)exist: 10
+Info         [2022-06-18 20:34:30 pid:33963 tid:13989] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:238 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-18 20:34:30 pid:33963 tid:13989] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:238 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-18 20:34:30 pid:33963 tid:13989] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:203 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-18 20:34:30 pid:33963 tid:13989] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:203 MSet)Set success from 182.92.68.121:9091
+Info         [2022-06-18 20:34:30 pid:33963 tid:13989] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:221 MSet)end set
+Info         [2022-06-18 20:34:30 pid:33963 tid:13989] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:325 MMFinish)MMFinish begin
+Info         [2022-06-18 20:34:30 pid:33963 tid:13989] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:327 MMFinish)1
+Info         [2022-06-18 20:34:30 pid:33963 tid:13989] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:335 MFinish)MFinish begin
+Info         [2022-06-18 20:34:30 pid:33963 tid:13989] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:364 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-18 20:34:30 pid:33963 tid:13989] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:364 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-18 20:34:30 pid:33963 tid:13989] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:358 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-18 20:34:30 pid:33963 tid:13989] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:358 MFinish)finish success from 182.92.68.121:9091
+Info         [2022-06-18 20:34:49 pid:33963 tid:13989] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:48 MGet)MGet begin
+Info         [2022-06-18 20:34:49 pid:33963 tid:13989] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get success, value=pfrom 82.156.171.212:9091
+Info         [2022-06-18 20:34:49 pid:33963 tid:13989] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get success, value=pfrom 182.92.68.121:9091
+Info         [2022-06-18 20:34:49 pid:33963 tid:13989] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:44 Get)Get message: success, value: p
+Info         [2022-06-18 20:37:38 pid:34097 tid:14050] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-18 20:37:38 pid:34097 tid:14050] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:410 main)rsync response:success
+Info         [2022-06-18 20:37:45 pid:34097 tid:14050] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:48 MGet)MGet begin
+Info         [2022-06-18 20:37:45 pid:34097 tid:14050] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get success, value=p from 82.156.171.212:9091
+Info         [2022-06-18 20:37:45 pid:34097 tid:14050] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:79 MGet)Get success, value=p from 182.92.68.121:9091
+Info         [2022-06-18 20:37:45 pid:34097 tid:14050] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:44 Get)Get message: success, value: p
+Info         [2022-06-19 02:46:25 pid:12934 tid:14008] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-22 00:41:17 pid:46595 tid:14009] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-22 00:41:53 pid:46595 tid:14009] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:55 MGet)MGet begin
+Error         [2022-06-22 00:41:53 pid:46595 tid:14009] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:73 MGet)thrift error: socket open() error: Connection refused from 182.92.68.121:9091
+Info         [2022-06-22 00:41:53 pid:46595 tid:14009] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:51 Get)Get message: fail, value: 

@@ -14,6 +14,230 @@
 namespace rpc { namespace master {
 
 
+BinLogRequest::~BinLogRequest() throw() {
+}
+
+
+void BinLogRequest::__set_command(const std::string& val) {
+  this->command = val;
+}
+
+void BinLogRequest::__set_key(const std::string& val) {
+  this->key = val;
+}
+
+void BinLogRequest::__set_value(const std::string& val) {
+  this->value = val;
+}
+std::ostream& operator<<(std::ostream& out, const BinLogRequest& obj)
+{
+  obj.printTo(out);
+  return out;
+}
+
+
+uint32_t BinLogRequest::read(::apache::thrift::protocol::TProtocol* iprot) {
+
+  ::apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
+  uint32_t xfer = 0;
+  std::string fname;
+  ::apache::thrift::protocol::TType ftype;
+  int16_t fid;
+
+  xfer += iprot->readStructBegin(fname);
+
+  using ::apache::thrift::protocol::TProtocolException;
+
+
+  while (true)
+  {
+    xfer += iprot->readFieldBegin(fname, ftype, fid);
+    if (ftype == ::apache::thrift::protocol::T_STOP) {
+      break;
+    }
+    switch (fid)
+    {
+      case 1:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->command);
+          this->__isset.command = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 2:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->key);
+          this->__isset.key = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      case 3:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->value);
+          this->__isset.value = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
+    xfer += iprot->readFieldEnd();
+  }
+
+  xfer += iprot->readStructEnd();
+
+  return xfer;
+}
+
+uint32_t BinLogRequest::write(::apache::thrift::protocol::TProtocol* oprot) const {
+  uint32_t xfer = 0;
+  ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
+  xfer += oprot->writeStructBegin("BinLogRequest");
+
+  xfer += oprot->writeFieldBegin("command", ::apache::thrift::protocol::T_STRING, 1);
+  xfer += oprot->writeString(this->command);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("key", ::apache::thrift::protocol::T_STRING, 2);
+  xfer += oprot->writeString(this->key);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldBegin("value", ::apache::thrift::protocol::T_STRING, 3);
+  xfer += oprot->writeString(this->value);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldStop();
+  xfer += oprot->writeStructEnd();
+  return xfer;
+}
+
+void swap(BinLogRequest &a, BinLogRequest &b) {
+  using ::std::swap;
+  swap(a.command, b.command);
+  swap(a.key, b.key);
+  swap(a.value, b.value);
+  swap(a.__isset, b.__isset);
+}
+
+BinLogRequest::BinLogRequest(const BinLogRequest& other0) {
+  command = other0.command;
+  key = other0.key;
+  value = other0.value;
+  __isset = other0.__isset;
+}
+BinLogRequest& BinLogRequest::operator=(const BinLogRequest& other1) {
+  command = other1.command;
+  key = other1.key;
+  value = other1.value;
+  __isset = other1.__isset;
+  return *this;
+}
+void BinLogRequest::printTo(std::ostream& out) const {
+  using ::apache::thrift::to_string;
+  out << "BinLogRequest(";
+  out << "command=" << to_string(command);
+  out << ", " << "key=" << to_string(key);
+  out << ", " << "value=" << to_string(value);
+  out << ")";
+}
+
+
+BinLogResponse::~BinLogResponse() throw() {
+}
+
+
+void BinLogResponse::__set_message(const std::string& val) {
+  this->message = val;
+}
+std::ostream& operator<<(std::ostream& out, const BinLogResponse& obj)
+{
+  obj.printTo(out);
+  return out;
+}
+
+
+uint32_t BinLogResponse::read(::apache::thrift::protocol::TProtocol* iprot) {
+
+  ::apache::thrift::protocol::TInputRecursionTracker tracker(*iprot);
+  uint32_t xfer = 0;
+  std::string fname;
+  ::apache::thrift::protocol::TType ftype;
+  int16_t fid;
+
+  xfer += iprot->readStructBegin(fname);
+
+  using ::apache::thrift::protocol::TProtocolException;
+
+
+  while (true)
+  {
+    xfer += iprot->readFieldBegin(fname, ftype, fid);
+    if (ftype == ::apache::thrift::protocol::T_STOP) {
+      break;
+    }
+    switch (fid)
+    {
+      case 1:
+        if (ftype == ::apache::thrift::protocol::T_STRING) {
+          xfer += iprot->readString(this->message);
+          this->__isset.message = true;
+        } else {
+          xfer += iprot->skip(ftype);
+        }
+        break;
+      default:
+        xfer += iprot->skip(ftype);
+        break;
+    }
+    xfer += iprot->readFieldEnd();
+  }
+
+  xfer += iprot->readStructEnd();
+
+  return xfer;
+}
+
+uint32_t BinLogResponse::write(::apache::thrift::protocol::TProtocol* oprot) const {
+  uint32_t xfer = 0;
+  ::apache::thrift::protocol::TOutputRecursionTracker tracker(*oprot);
+  xfer += oprot->writeStructBegin("BinLogResponse");
+
+  xfer += oprot->writeFieldBegin("message", ::apache::thrift::protocol::T_STRING, 1);
+  xfer += oprot->writeString(this->message);
+  xfer += oprot->writeFieldEnd();
+
+  xfer += oprot->writeFieldStop();
+  xfer += oprot->writeStructEnd();
+  return xfer;
+}
+
+void swap(BinLogResponse &a, BinLogResponse &b) {
+  using ::std::swap;
+  swap(a.message, b.message);
+  swap(a.__isset, b.__isset);
+}
+
+BinLogResponse::BinLogResponse(const BinLogResponse& other2) {
+  message = other2.message;
+  __isset = other2.__isset;
+}
+BinLogResponse& BinLogResponse::operator=(const BinLogResponse& other3) {
+  message = other3.message;
+  __isset = other3.__isset;
+  return *this;
+}
+void BinLogResponse::printTo(std::ostream& out) const {
+  using ::apache::thrift::to_string;
+  out << "BinLogResponse(";
+  out << "message=" << to_string(message);
+  out << ")";
+}
+
+
 GetRequest::~GetRequest() throw() {
 }
 
@@ -89,13 +313,13 @@ void swap(GetRequest &a, GetRequest &b) {
   swap(a.__isset, b.__isset);
 }
 
-GetRequest::GetRequest(const GetRequest& other0) {
-  key = other0.key;
-  __isset = other0.__isset;
+GetRequest::GetRequest(const GetRequest& other4) {
+  key = other4.key;
+  __isset = other4.__isset;
 }
-GetRequest& GetRequest::operator=(const GetRequest& other1) {
-  key = other1.key;
-  __isset = other1.__isset;
+GetRequest& GetRequest::operator=(const GetRequest& other5) {
+  key = other5.key;
+  __isset = other5.__isset;
   return *this;
 }
 void GetRequest::printTo(std::ostream& out) const {
@@ -215,17 +439,17 @@ void swap(GetResponse &a, GetResponse &b) {
   swap(a.__isset, b.__isset);
 }
 
-GetResponse::GetResponse(const GetResponse& other2) {
-  value = other2.value;
-  message = other2.message;
-  connection_id = other2.connection_id;
-  __isset = other2.__isset;
+GetResponse::GetResponse(const GetResponse& other6) {
+  value = other6.value;
+  message = other6.message;
+  connection_id = other6.connection_id;
+  __isset = other6.__isset;
 }
-GetResponse& GetResponse::operator=(const GetResponse& other3) {
-  value = other3.value;
-  message = other3.message;
-  connection_id = other3.connection_id;
-  __isset = other3.__isset;
+GetResponse& GetResponse::operator=(const GetResponse& other7) {
+  value = other7.value;
+  message = other7.message;
+  connection_id = other7.connection_id;
+  __isset = other7.__isset;
   return *this;
 }
 void GetResponse::printTo(std::ostream& out) const {
@@ -347,17 +571,17 @@ void swap(SetRequest &a, SetRequest &b) {
   swap(a.__isset, b.__isset);
 }
 
-SetRequest::SetRequest(const SetRequest& other4) {
-  key = other4.key;
-  value = other4.value;
-  func_call = other4.func_call;
-  __isset = other4.__isset;
+SetRequest::SetRequest(const SetRequest& other8) {
+  key = other8.key;
+  value = other8.value;
+  func_call = other8.func_call;
+  __isset = other8.__isset;
 }
-SetRequest& SetRequest::operator=(const SetRequest& other5) {
-  key = other5.key;
-  value = other5.value;
-  func_call = other5.func_call;
-  __isset = other5.__isset;
+SetRequest& SetRequest::operator=(const SetRequest& other9) {
+  key = other9.key;
+  value = other9.value;
+  func_call = other9.func_call;
+  __isset = other9.__isset;
   return *this;
 }
 void SetRequest::printTo(std::ostream& out) const {
@@ -368,9 +592,9 @@ void SetRequest::printTo(std::ostream& out) const {
   out << ", " << "func_call=" << to_string(func_call);
   out << ")";
 }
-        
-        
-        SetResponse::~SetResponse() throw() {
+
+
+SetResponse::~SetResponse() throw() {
 }
 
 
@@ -462,15 +686,15 @@ void swap(SetResponse &a, SetResponse &b) {
   swap(a.__isset, b.__isset);
 }
 
-SetResponse::SetResponse(const SetResponse& other6) {
-  connection_id = other6.connection_id;
-  message = other6.message;
-  __isset = other6.__isset;
+SetResponse::SetResponse(const SetResponse& other10) {
+  connection_id = other10.connection_id;
+  message = other10.message;
+  __isset = other10.__isset;
 }
-SetResponse& SetResponse::operator=(const SetResponse& other7) {
-  connection_id = other7.connection_id;
-  message = other7.message;
-  __isset = other7.__isset;
+SetResponse& SetResponse::operator=(const SetResponse& other11) {
+  connection_id = other11.connection_id;
+  message = other11.message;
+  __isset = other11.__isset;
   return *this;
 }
 void SetResponse::printTo(std::ostream& out) const {
@@ -557,13 +781,13 @@ void swap(DelRequest &a, DelRequest &b) {
   swap(a.__isset, b.__isset);
 }
 
-DelRequest::DelRequest(const DelRequest& other8) {
-  key = other8.key;
-  __isset = other8.__isset;
+DelRequest::DelRequest(const DelRequest& other12) {
+  key = other12.key;
+  __isset = other12.__isset;
 }
-DelRequest& DelRequest::operator=(const DelRequest& other9) {
-  key = other9.key;
-  __isset = other9.__isset;
+DelRequest& DelRequest::operator=(const DelRequest& other13) {
+  key = other13.key;
+  __isset = other13.__isset;
   return *this;
 }
 void DelRequest::printTo(std::ostream& out) const {
@@ -666,15 +890,15 @@ void swap(DelResponse &a, DelResponse &b) {
   swap(a.__isset, b.__isset);
 }
 
-DelResponse::DelResponse(const DelResponse& other10) {
-  connection_id = other10.connection_id;
-  message = other10.message;
-  __isset = other10.__isset;
+DelResponse::DelResponse(const DelResponse& other14) {
+  connection_id = other14.connection_id;
+  message = other14.message;
+  __isset = other14.__isset;
 }
-DelResponse& DelResponse::operator=(const DelResponse& other11) {
-  connection_id = other11.connection_id;
-  message = other11.message;
-  __isset = other11.__isset;
+DelResponse& DelResponse::operator=(const DelResponse& other15) {
+  connection_id = other15.connection_id;
+  message = other15.message;
+  __isset = other15.__isset;
   return *this;
 }
 void DelResponse::printTo(std::ostream& out) const {

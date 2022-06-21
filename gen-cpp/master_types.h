@@ -20,6 +20,10 @@
 
 namespace rpc { namespace master {
 
+class BinLogRequest;
+
+class BinLogResponse;
+
 class GetRequest;
 
 class GetResponse;
@@ -31,6 +35,105 @@ class SetResponse;
 class DelRequest;
 
 class DelResponse;
+
+typedef struct _BinLogRequest__isset {
+  _BinLogRequest__isset() : command(false), key(false), value(false) {}
+  bool command :1;
+  bool key :1;
+  bool value :1;
+} _BinLogRequest__isset;
+
+class BinLogRequest : public virtual ::apache::thrift::TBase {
+ public:
+
+  BinLogRequest(const BinLogRequest&);
+  BinLogRequest& operator=(const BinLogRequest&);
+  BinLogRequest() : command(), key(), value() {
+  }
+  BinLogRequest(std::string _command, std::string _key, std::string _value) : command(_command), key(_key), value(_value) {
+  
+  }
+
+  virtual ~BinLogRequest() throw();
+  std::string command;
+  std::string key;
+  std::string value;
+
+  _BinLogRequest__isset __isset;
+
+  void __set_command(const std::string& val);
+
+  void __set_key(const std::string& val);
+
+  void __set_value(const std::string& val);
+
+  bool operator == (const BinLogRequest & rhs) const
+  {
+    if (!(command == rhs.command))
+      return false;
+    if (!(key == rhs.key))
+      return false;
+    if (!(value == rhs.value))
+      return false;
+    return true;
+  }
+  bool operator != (const BinLogRequest &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const BinLogRequest & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+  virtual void printTo(std::ostream& out) const;
+};
+
+void swap(BinLogRequest &a, BinLogRequest &b);
+
+std::ostream& operator<<(std::ostream& out, const BinLogRequest& obj);
+
+typedef struct _BinLogResponse__isset {
+  _BinLogResponse__isset() : message(false) {}
+  bool message :1;
+} _BinLogResponse__isset;
+
+class BinLogResponse : public virtual ::apache::thrift::TBase {
+ public:
+
+  BinLogResponse(const BinLogResponse&);
+  BinLogResponse& operator=(const BinLogResponse&);
+  BinLogResponse() : message() {
+  }
+
+  virtual ~BinLogResponse() throw();
+  std::string message;
+
+  _BinLogResponse__isset __isset;
+
+  void __set_message(const std::string& val);
+
+  bool operator == (const BinLogResponse & rhs) const
+  {
+    if (!(message == rhs.message))
+      return false;
+    return true;
+  }
+  bool operator != (const BinLogResponse &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const BinLogResponse & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+  virtual void printTo(std::ostream& out) const;
+};
+
+void swap(BinLogResponse &a, BinLogResponse &b);
+
+std::ostream& operator<<(std::ostream& out, const BinLogResponse& obj);
 
 typedef struct _GetRequest__isset {
   _GetRequest__isset() : key(false) {}
@@ -139,15 +242,10 @@ class SetRequest : public virtual ::apache::thrift::TBase {
  public:
 
   SetRequest(const SetRequest&);
-  
-  
   SetRequest& operator=(const SetRequest&);
   SetRequest() : key(), value(), func_call() {
   }
-  SetRequest(const std::string& _key,const std::string& _value,const std::string& _func_call) : key(_key), value(_value), func_call(_func_call) {
-  }
 
-  
   virtual ~SetRequest() throw();
   std::string key;
   std::string value;

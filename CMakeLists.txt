@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.16)
 project(master_rpc)
 
+
+set(CMAKE_CXX_STANDARD 20)
 # include (cmake/util.cmake)
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
@@ -49,7 +51,7 @@ add_executable(master_server gen-cpp/Master_server.cpp)
 add_dependencies(master_server rpc)
 target_link_libraries(master_server rpc ${LIB_LIB})
 
-add_executable(master_client client/Master_client.cpp)
+add_executable(master_client client/client.cpp)
 add_dependencies(master_client rpc)
 target_link_libraries(master_client rpc ${LIB_LIB})
 

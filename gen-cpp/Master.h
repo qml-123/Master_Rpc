@@ -21,6 +21,7 @@ namespace rpc { namespace master {
 class MasterIf {
  public:
   virtual ~MasterIf() {}
+  virtual void SendBinLog(BinLogResponse& _return, const BinLogRequest& rsyncRequest) = 0;
   virtual void Get(GetResponse& _return, const GetRequest& getRequest) = 0;
   virtual void Set(SetResponse& _return, const SetRequest& setRequest) = 0;
   virtual void Del(DelResponse& _return, const DelRequest& delRequest) = 0;
@@ -53,6 +54,9 @@ class MasterIfSingletonFactory : virtual public MasterIfFactory {
 class MasterNull : virtual public MasterIf {
  public:
   virtual ~MasterNull() {}
+  void SendBinLog(BinLogResponse& /* _return */, const BinLogRequest& /* rsyncRequest */) {
+    return;
+  }
   void Get(GetResponse& /* _return */, const GetRequest& /* getRequest */) {
     return;
   }
@@ -62,6 +66,110 @@ class MasterNull : virtual public MasterIf {
   void Del(DelResponse& /* _return */, const DelRequest& /* delRequest */) {
     return;
   }
+};
+
+typedef struct _Master_SendBinLog_args__isset {
+  _Master_SendBinLog_args__isset() : rsyncRequest(false) {}
+  bool rsyncRequest :1;
+} _Master_SendBinLog_args__isset;
+
+class Master_SendBinLog_args {
+ public:
+
+  Master_SendBinLog_args(const Master_SendBinLog_args&);
+  Master_SendBinLog_args& operator=(const Master_SendBinLog_args&);
+  Master_SendBinLog_args() {
+  }
+
+  virtual ~Master_SendBinLog_args() throw();
+  BinLogRequest rsyncRequest;
+
+  _Master_SendBinLog_args__isset __isset;
+
+  void __set_rsyncRequest(const BinLogRequest& val);
+
+  bool operator == (const Master_SendBinLog_args & rhs) const
+  {
+    if (!(rsyncRequest == rhs.rsyncRequest))
+      return false;
+    return true;
+  }
+  bool operator != (const Master_SendBinLog_args &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const Master_SendBinLog_args & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+
+class Master_SendBinLog_pargs {
+ public:
+
+
+  virtual ~Master_SendBinLog_pargs() throw();
+  const BinLogRequest* rsyncRequest;
+
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _Master_SendBinLog_result__isset {
+  _Master_SendBinLog_result__isset() : success(false) {}
+  bool success :1;
+} _Master_SendBinLog_result__isset;
+
+class Master_SendBinLog_result {
+ public:
+
+  Master_SendBinLog_result(const Master_SendBinLog_result&);
+  Master_SendBinLog_result& operator=(const Master_SendBinLog_result&);
+  Master_SendBinLog_result() {
+  }
+
+  virtual ~Master_SendBinLog_result() throw();
+  BinLogResponse success;
+
+  _Master_SendBinLog_result__isset __isset;
+
+  void __set_success(const BinLogResponse& val);
+
+  bool operator == (const Master_SendBinLog_result & rhs) const
+  {
+    if (!(success == rhs.success))
+      return false;
+    return true;
+  }
+  bool operator != (const Master_SendBinLog_result &rhs) const {
+    return !(*this == rhs);
+  }
+
+  bool operator < (const Master_SendBinLog_result & ) const;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+  uint32_t write(::apache::thrift::protocol::TProtocol* oprot) const;
+
+};
+
+typedef struct _Master_SendBinLog_presult__isset {
+  _Master_SendBinLog_presult__isset() : success(false) {}
+  bool success :1;
+} _Master_SendBinLog_presult__isset;
+
+class Master_SendBinLog_presult {
+ public:
+
+
+  virtual ~Master_SendBinLog_presult() throw();
+  BinLogResponse* success;
+
+  _Master_SendBinLog_presult__isset __isset;
+
+  uint32_t read(::apache::thrift::protocol::TProtocol* iprot);
+
 };
 
 typedef struct _Master_Get_args__isset {
@@ -401,6 +509,9 @@ class MasterClient : virtual public MasterIf {
   apache::thrift::stdcxx::shared_ptr< ::apache::thrift::protocol::TProtocol> getOutputProtocol() {
     return poprot_;
   }
+  void SendBinLog(BinLogResponse& _return, const BinLogRequest& rsyncRequest);
+  void send_SendBinLog(const BinLogRequest& rsyncRequest);
+  void recv_SendBinLog(BinLogResponse& _return);
   void Get(GetResponse& _return, const GetRequest& getRequest);
   void send_Get(const GetRequest& getRequest);
   void recv_Get(GetResponse& _return);
@@ -425,12 +536,14 @@ class MasterProcessor : public ::apache::thrift::TDispatchProcessor {
   typedef  void (MasterProcessor::*ProcessFunction)(int32_t, ::apache::thrift::protocol::TProtocol*, ::apache::thrift::protocol::TProtocol*, void*);
   typedef std::map<std::string, ProcessFunction> ProcessMap;
   ProcessMap processMap_;
+  void process_SendBinLog(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
   void process_Get(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
   void process_Set(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
   void process_Del(int32_t seqid, ::apache::thrift::protocol::TProtocol* iprot, ::apache::thrift::protocol::TProtocol* oprot, void* callContext);
  public:
   MasterProcessor(::apache::thrift::stdcxx::shared_ptr<MasterIf> iface) :
     iface_(iface) {
+    processMap_["SendBinLog"] = &MasterProcessor::process_SendBinLog;
     processMap_["Get"] = &MasterProcessor::process_Get;
     processMap_["Set"] = &MasterProcessor::process_Set;
     processMap_["Del"] = &MasterProcessor::process_Del;
@@ -462,6 +575,16 @@ class MasterMultiface : virtual public MasterIf {
     ifaces_.push_back(iface);
   }
  public:
+  void SendBinLog(BinLogResponse& _return, const BinLogRequest& rsyncRequest) {
+    size_t sz = ifaces_.size();
+    size_t i = 0;
+    for (; i < (sz - 1); ++i) {
+      ifaces_[i]->SendBinLog(_return, rsyncRequest);
+    }
+    ifaces_[i]->SendBinLog(_return, rsyncRequest);
+    return;
+  }
+
   void Get(GetResponse& _return, const GetRequest& getRequest) {
     size_t sz = ifaces_.size();
     size_t i = 0;
@@ -522,6 +645,9 @@ class MasterConcurrentClient : virtual public MasterIf {
   apache::thrift::stdcxx::shared_ptr< ::apache::thrift::protocol::TProtocol> getOutputProtocol() {
     return poprot_;
   }
+  void SendBinLog(BinLogResponse& _return, const BinLogRequest& rsyncRequest);
+  int32_t send_SendBinLog(const BinLogRequest& rsyncRequest);
+  void recv_SendBinLog(BinLogResponse& _return, const int32_t seqid);
   void Get(GetResponse& _return, const GetRequest& getRequest);
   int32_t send_Get(const GetRequest& getRequest);
   void recv_Get(GetResponse& _return, const int32_t seqid);
