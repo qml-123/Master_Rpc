@@ -5,7 +5,6 @@
 #include "log/elog.h"
 #include "thread/threadpool.h"
 #include "conf/clientconf.h"
-#include "client/master_client.h"
 #include <memory>
 #include <thrift/protocol/TBinaryProtocol.h>
 #include <thrift/server/TNonblockingServer.h>
@@ -44,7 +43,6 @@ public:
     
     void Get(GetResponse& _return, const GetRequest& getRequest) {
         //master获取slave连接
-    
         MGet(_return, getRequest);
     
         log_i(("Get message: " + _return.message + ", value: " + _return.value).c_str());
@@ -97,8 +95,7 @@ public:
             }catch (const std::future_error& err) {
                 log_e(err.what());
             }
-    
-    
+            
             log_i(("Get " + getResponse.message + ", value=" + getResponse.value + " from " + clients[i]->getIp() + ":" + std::to_string(clients[i]->getPort())).c_str());
             
             messages.insert(getResponse.message);
@@ -180,9 +177,7 @@ public:
     
     void Set(SetResponse& _return, const SetRequest& setRequest) {
         // Your implementation goes here
-        
         MSet(_return, setRequest);
-        
     }
     
     void MSet(SetResponse& _return, const SetRequest& setRequest) {
@@ -413,58 +408,4 @@ public:
         return ret;
     }
     
-    static void MFinishFromSlave(const FinishRequest& finishRequest, slaveClient::ptr& client, std::promise<FinishResponse>& obj) {
-        log_i("MFinishFromSlave begin");
-        FinishResponse finishResponse;
-        try {
-            client->Finish(finishResponse, finishRequest);
-        }catch (const ::apache::thrift::transport::TTransportException& ttx) {
-            log_e((std::string("Finish ") + ttx.what()).c_str());
-            finishResponse.message = "fail";
-        }
-        try {
-            obj.set_value(finishResponse);
-        }catch (const std::future_error& err) {
-            log_e(err.what());
-        }
-    }
-    
-};
-
-int main(int argc, char **argv) {
-    
-    //log init
-    setbuf(stdout, NULL);
-    elog_init();
-    elog_set_fmt(ELOG_LVL_ASSERT, ELOG_FMT_LVL | ELOG_FMT_TAG | ELOG_FMT_TIME);
-    elog_set_fmt(ELOG_LVL_ERROR, ELOG_FMT_ALL);
-    elog_set_fmt(ELOG_LVL_WARN, ELOG_FMT_ALL);
-    elog_set_fmt(ELOG_LVL_INFO, ELOG_FMT_ALL);
-    elog_set_fmt(ELOG_LVL_DEBUG, ELOG_FMT_ALL & ~ELOG_FMT_FUNC);
-    elog_set_fmt(ELOG_LVL_VERBOSE, ELOG_FMT_ALL & ~ELOG_FMT_FUNC);
-    elog_start();
-    
-
-    
-    int port = 9090;
-    //业务接口,暴露给client
-    ::apache::thrift::stdcxx::shared_ptr<MasterHandler> handler(new MasterHandler());
-    ::apache::thrift::stdcxx::shared_ptr<TProcessor> processor(new MasterProcessor(handler));
-    //Master监听在9090端口
-    ::apache::thrift::stdcxx::shared_ptr<TNonblockingServerSocket> serverTransport(new TNonblockingServerSocket(port));
-    ::apache::thrift::stdcxx::shared_ptr<TProtocolFactory> protocolFactory(new TBinaryProtocolFactory());
-    
-    //任务处理线程池
-    ::apache::thrift::stdcxx::shared_ptr<ThreadManager> threadManager = ThreadManager::newSimpleThreadManager(15);
-    ::apache::thrift::stdcxx::shared_ptr<PosixThreadFactory> threadFactory(new PosixThreadFactory());
-    
-    threadManager->threadFactory(threadFactory);
-    threadManager->start();
-    
-    TNonblockingServer server(processor, protocolFactory, serverTransport, threadManager);
-    server.setNumIOThreads(5);//设置处理连接请求线程数
-    server.serve();
-    
-    return 0;
-}
-
+    static void MFinishFromSlave(const FinishRequest& finishRe

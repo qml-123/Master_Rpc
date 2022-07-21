@@ -4513,3 +4513,316 @@ Info         [2022-06-22 00:41:17 pid:46595 tid:14009] (/root/wokespace/master_r
 Info         [2022-06-22 00:41:53 pid:46595 tid:14009] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:55 MGet)MGet begin
 Error         [2022-06-22 00:41:53 pid:46595 tid:14009] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:73 MGet)thrift error: socket open() error: Connection refused from 182.92.68.121:9091
 Info         [2022-06-22 00:41:53 pid:46595 tid:14009] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:51 Get)Get message: fail, value: 
+Info         [2022-06-26 20:26:30 pid:58592 tid:13992] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Error         [2022-06-26 20:27:50 pid:58592 tid:13992] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:203 MSet)thrift error: socket open() error: Connection refused from 182.92.68.121:9091
+Info         [2022-06-26 20:29:39 pid:58682 tid:13983] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-26 20:30:16 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=aa not exist from 82.156.171.212:9091
+Info         [2022-06-26 20:30:16 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=aa not exist from 182.92.68.121:9091
+Info         [2022-06-26 20:30:16 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:217 MSet)exist: 00
+Info         [2022-06-26 20:30:16 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:30:16 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-26 20:30:16 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:30:16 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 182.92.68.121:9091
+Info         [2022-06-26 20:30:16 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:259 MSet)end set
+Info         [2022-06-26 20:30:16 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:379 MMFinish)MMFinish begin
+Info         [2022-06-26 20:30:16 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:388 MFinish)MFinish begin
+Info         [2022-06-26 20:30:16 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:30:16 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:30:17 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-26 20:30:17 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 182.92.68.121:9091
+Info         [2022-06-26 20:31:13 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=bb not exist from 82.156.171.212:9091
+Info         [2022-06-26 20:31:13 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=bb not exist from 182.92.68.121:9091
+Info         [2022-06-26 20:31:13 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:217 MSet)exist: 00
+Info         [2022-06-26 20:31:13 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:31:13 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:31:13 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-26 20:31:13 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 182.92.68.121:9091
+Info         [2022-06-26 20:31:13 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:259 MSet)end set
+Info         [2022-06-26 20:31:13 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:379 MMFinish)MMFinish begin
+Info         [2022-06-26 20:31:13 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:388 MFinish)MFinish begin
+Info         [2022-06-26 20:31:13 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:31:13 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:31:13 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-26 20:31:13 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 182.92.68.121:9091
+Info         [2022-06-26 20:36:34 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:54 MGet)MGet begin
+Info         [2022-06-26 20:36:34 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=a from 82.156.171.212:9091
+Info         [2022-06-26 20:36:34 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=a from 182.92.68.121:9091
+Info         [2022-06-26 20:36:34 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:50 Get)Get message: success, value: a
+Info         [2022-06-26 20:41:52 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:54 MGet)MGet begin
+Info         [2022-06-26 20:41:52 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=a from 82.156.171.212:9091
+Info         [2022-06-26 20:41:52 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=a from 182.92.68.121:9091
+Info         [2022-06-26 20:41:52 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:50 Get)Get message: success, value: a
+Info         [2022-06-26 20:42:42 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:54 MGet)MGet begin
+Info         [2022-06-26 20:42:42 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=b from 82.156.171.212:9091
+Info         [2022-06-26 20:42:42 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=b from 182.92.68.121:9091
+Info         [2022-06-26 20:42:42 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:50 Get)Get message: success, value: b
+Info         [2022-06-26 20:43:10 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=aa  exist from 82.156.171.212:9091
+Info         [2022-06-26 20:43:10 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=aa  exist from 182.92.68.121:9091
+Info         [2022-06-26 20:43:10 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:341 MDel)Del success from 82.156.171.212:9091
+Info         [2022-06-26 20:43:10 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:341 MDel)Del success from 182.92.68.121:9091
+Info         [2022-06-26 20:43:10 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:379 MMFinish)MMFinish begin
+Info         [2022-06-26 20:43:10 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:388 MFinish)MFinish begin
+Info         [2022-06-26 20:43:10 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:43:10 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:43:10 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-26 20:43:10 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 182.92.68.121:9091
+Info         [2022-06-26 20:44:58 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:54 MGet)MGet begin
+Error         [2022-06-26 20:44:58 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:72 MGet)thrift error: socket open() error: Connection refused from 82.156.171.212:9091
+Info         [2022-06-26 20:44:58 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:50 Get)Get message: fail, value: 
+Error         [2022-06-26 20:45:32 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:203 MSet)thrift error: socket open() error: Connection refused from 82.156.171.212:9091
+Info         [2022-06-26 20:47:36 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=bb  exist from 82.156.171.212:9091
+Info         [2022-06-26 20:47:36 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=bb  exist from 182.92.68.121:9091
+Info         [2022-06-26 20:47:36 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:217 MSet)exist: 11
+Info         [2022-06-26 20:47:36 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:47:36 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-26 20:47:36 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:47:36 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 182.92.68.121:9091
+Info         [2022-06-26 20:47:36 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:259 MSet)end set
+Info         [2022-06-26 20:47:36 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:379 MMFinish)MMFinish begin
+Info         [2022-06-26 20:47:36 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:388 MFinish)MFinish begin
+Info         [2022-06-26 20:47:36 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:47:36 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:47:36 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-26 20:47:36 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 182.92.68.121:9091
+Info         [2022-06-26 20:49:57 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:54 MGet)MGet begin
+Info         [2022-06-26 20:49:57 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=v from 82.156.171.212:9091
+Info         [2022-06-26 20:49:57 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=v from 182.92.68.121:9091
+Info         [2022-06-26 20:49:57 pid:58682 tid:13983] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:50 Get)Get message: success, value: v
+Info         [2022-06-26 20:55:26 pid:59079 tid:13999] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-26 20:55:41 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:54 MGet)MGet begin
+Info         [2022-06-26 20:55:41 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=v from 82.156.171.212:9091
+Info         [2022-06-26 20:55:41 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=v from 182.92.68.121:9091
+Info         [2022-06-26 20:55:41 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:50 Get)Get message: success, value: v
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=cc not exist from 82.156.171.212:9091
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=cc not exist from 182.92.68.121:9091
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:217 MSet)exist: 00
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 182.92.68.121:9091
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:259 MSet)end set
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:379 MMFinish)MMFinish begin
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:388 MFinish)MFinish begin
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 182.92.68.121:9091
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=cc  exist from 82.156.171.212:9091
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=cc  exist from 182.92.68.121:9091
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:217 MSet)exist: 11
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 182.92.68.121:9091
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:259 MSet)end set
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:379 MMFinish)MMFinish begin
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:388 MFinish)MFinish begin
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-26 20:55:54 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 182.92.68.121:9091
+Info         [2022-06-26 20:55:58 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:54 MGet)MGet begin
+Info         [2022-06-26 20:55:58 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=b from 82.156.171.212:9091
+Info         [2022-06-26 20:55:58 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=b from 182.92.68.121:9091
+Info         [2022-06-26 20:55:58 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:50 Get)Get message: success, value: b
+Info         [2022-06-26 20:55:59 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:54 MGet)MGet begin
+Info         [2022-06-26 20:55:59 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=b from 82.156.171.212:9091
+Info         [2022-06-26 20:55:59 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=b from 182.92.68.121:9091
+Info         [2022-06-26 20:55:59 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:50 Get)Get message: success, value: b
+Info         [2022-06-26 20:56:20 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=dd not exist from 82.156.171.212:9091
+Info         [2022-06-26 20:56:20 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=dd not exist from 182.92.68.121:9091
+Info         [2022-06-26 20:56:20 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:217 MSet)exist: 00
+Info         [2022-06-26 20:56:20 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:56:20 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:56:20 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-26 20:56:20 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 182.92.68.121:9091
+Info         [2022-06-26 20:56:20 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:259 MSet)end set
+Info         [2022-06-26 20:56:20 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:379 MMFinish)MMFinish begin
+Info         [2022-06-26 20:56:20 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:388 MFinish)MFinish begin
+Info         [2022-06-26 20:56:20 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:56:20 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:56:20 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-26 20:56:20 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 182.92.68.121:9091
+Info         [2022-06-26 20:56:23 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=dd  exist from 82.156.171.212:9091
+Info         [2022-06-26 20:56:23 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=dd  exist from 182.92.68.121:9091
+Info         [2022-06-26 20:56:23 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:217 MSet)exist: 11
+Info         [2022-06-26 20:56:23 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:56:23 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:56:23 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-26 20:56:23 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 182.92.68.121:9091
+Info         [2022-06-26 20:56:23 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:259 MSet)end set
+Info         [2022-06-26 20:56:23 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:379 MMFinish)MMFinish begin
+Info         [2022-06-26 20:56:23 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:388 MFinish)MFinish begin
+Info         [2022-06-26 20:56:23 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:56:23 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:56:23 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-26 20:56:23 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 182.92.68.121:9091
+Info         [2022-06-26 20:56:36 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=dd  exist from 82.156.171.212:9091
+Info         [2022-06-26 20:56:36 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=dd  exist from 182.92.68.121:9091
+Info         [2022-06-26 20:56:36 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:217 MSet)exist: 11
+Info         [2022-06-26 20:56:36 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:56:36 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-26 20:56:36 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:56:36 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 182.92.68.121:9091
+Info         [2022-06-26 20:56:36 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:259 MSet)end set
+Info         [2022-06-26 20:56:36 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:379 MMFinish)MMFinish begin
+Info         [2022-06-26 20:56:36 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:388 MFinish)MFinish begin
+Info         [2022-06-26 20:56:36 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:56:36 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:56:36 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-26 20:56:36 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 182.92.68.121:9091
+Info         [2022-06-26 20:56:44 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=dd  exist from 82.156.171.212:9091
+Info         [2022-06-26 20:56:44 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=dd  exist from 182.92.68.121:9091
+Info         [2022-06-26 20:56:44 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:217 MSet)exist: 11
+Info         [2022-06-26 20:56:44 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:56:44 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:56:44 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-26 20:56:44 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 182.92.68.121:9091
+Info         [2022-06-26 20:56:44 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:259 MSet)end set
+Info         [2022-06-26 20:56:44 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:379 MMFinish)MMFinish begin
+Info         [2022-06-26 20:56:44 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:388 MFinish)MFinish begin
+Info         [2022-06-26 20:56:44 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:56:44 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:56:44 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-26 20:56:44 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 182.92.68.121:9091
+Info         [2022-06-26 20:56:45 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=dd  exist from 82.156.171.212:9091
+Info         [2022-06-26 20:56:45 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=dd  exist from 182.92.68.121:9091
+Info         [2022-06-26 20:56:45 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:217 MSet)exist: 11
+Info         [2022-06-26 20:56:45 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:56:45 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:56:45 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-26 20:56:45 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 182.92.68.121:9091
+Info         [2022-06-26 20:56:45 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:259 MSet)end set
+Info         [2022-06-26 20:56:45 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:379 MMFinish)MMFinish begin
+Info         [2022-06-26 20:56:45 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:388 MFinish)MFinish begin
+Info         [2022-06-26 20:56:45 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:56:45 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:56:45 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-26 20:56:45 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 182.92.68.121:9091
+Info         [2022-06-26 20:56:51 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:54 MGet)MGet begin
+Info         [2022-06-26 20:56:51 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=o from 82.156.171.212:9091
+Info         [2022-06-26 20:56:51 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=o from 182.92.68.121:9091
+Info         [2022-06-26 20:56:51 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:50 Get)Get message: success, value: o
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=dd  exist from 82.156.171.212:9091
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=dd  exist from 182.92.68.121:9091
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:217 MSet)exist: 11
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 182.92.68.121:9091
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:259 MSet)end set
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:379 MMFinish)MMFinish begin
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:388 MFinish)MFinish begin
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 182.92.68.121:9091
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=dd  exist from 82.156.171.212:9091
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=dd  exist from 182.92.68.121:9091
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:217 MSet)exist: 11
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 82.156.171.212:9091
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 182.92.68.121:9091
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:259 MSet)end set
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:379 MMFinish)MMFinish begin
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:388 MFinish)MFinish begin
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-26 20:57:14 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 182.92.68.121:9091
+Info         [2022-06-26 20:57:17 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:54 MGet)MGet begin
+Info         [2022-06-26 20:57:17 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=a from 82.156.171.212:9091
+Info         [2022-06-26 20:57:17 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=a from 182.92.68.121:9091
+Info         [2022-06-26 20:57:17 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:50 Get)Get message: success, value: a
+Info         [2022-06-26 20:57:20 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:54 MGet)MGet begin
+Info         [2022-06-26 20:57:20 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=a from 82.156.171.212:9091
+Info         [2022-06-26 20:57:20 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=a from 182.92.68.121:9091
+Info         [2022-06-26 20:57:20 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:50 Get)Get message: success, value: a
+Info         [2022-06-26 20:57:45 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:54 MGet)MGet begin
+Info         [2022-06-26 20:57:45 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=a from 82.156.171.212:9091
+Info         [2022-06-26 20:57:45 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get success, value=a from 182.92.68.121:9091
+Info         [2022-06-26 20:57:45 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:50 Get)Get message: success, value: a
+Info         [2022-06-26 20:57:59 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=dd  exist from 82.156.171.212:9091
+Info         [2022-06-26 20:57:59 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=dd  exist from 182.92.68.121:9091
+Info         [2022-06-26 20:57:59 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:341 MDel)Del success from 82.156.171.212:9091
+Info         [2022-06-26 20:57:59 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:341 MDel)Del success from 182.92.68.121:9091
+Info         [2022-06-26 20:57:59 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:379 MMFinish)MMFinish begin
+Info         [2022-06-26 20:57:59 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:388 MFinish)MFinish begin
+Info         [2022-06-26 20:57:59 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:57:59 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-06-26 20:57:59 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-06-26 20:57:59 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 182.92.68.121:9091
+Info         [2022-06-26 20:57:59 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:54 MGet)MGet begin
+Info         [2022-06-26 20:58:00 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get fail, value= from 82.156.171.212:9091
+Info         [2022-06-26 20:58:00 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get fail, value= from 182.92.68.121:9091
+Info         [2022-06-26 20:58:00 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:50 Get)Get message: fail, value: 
+Info         [2022-06-26 21:04:24 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:54 MGet)MGet begin
+Error         [2022-06-26 21:04:24 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:72 MGet)thrift error: socket open() error: Connection refused from 82.156.171.212:9091
+Info         [2022-06-26 21:04:24 pid:59079 tid:13999] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:50 Get)Get message: fail, value: 
+Info         [2022-06-26 21:49:25 pid:61041 tid:14031] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-06-26 21:49:47 pid:61041 tid:14031] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:54 MGet)MGet begin
+Error         [2022-06-26 21:49:47 pid:61041 tid:14031] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:72 MGet)thrift error: socket open() error: Connection refused from 82.156.171.212:9091
+Error         [2022-06-26 21:49:47 pid:61041 tid:14031] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:72 MGet)thrift error: socket open() error: Connection refused from 182.92.68.121:9091
+Info         [2022-06-26 21:49:47 pid:61041 tid:14031] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:50 Get)Get message: fail, value: 
+Info         [2022-07-01 14:29:18 pid:73051 tid:14013] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-07-01 14:29:40 pid:73051 tid:14013] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:54 MGet)MGet begin
+Error         [2022-07-01 14:29:40 pid:73051 tid:14013] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:72 MGet)thrift error: socket open() error: Connection refused from 82.156.171.212:9091
+Error         [2022-07-01 14:29:40 pid:73051 tid:14013] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:72 MGet)thrift error: socket open() error: Connection refused from 182.92.68.121:9091
+Info         [2022-07-01 14:29:40 pid:73051 tid:14013] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:50 Get)Get message: fail, value: 
+Info         [2022-07-01 14:30:33 pid:73051 tid:14013] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:54 MGet)MGet begin
+Error         [2022-07-01 14:30:33 pid:73051 tid:14013] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:72 MGet)thrift error: socket open() error: Connection refused from 82.156.171.212:9091
+Info         [2022-07-01 14:30:33 pid:73051 tid:14013] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:50 Get)Get message: fail, value: 
+Error         [2022-07-01 14:30:38 pid:73051 tid:14013] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:203 MSet)thrift error: socket open() error: Connection refused from 82.156.171.212:9091
+Info         [2022-07-01 14:31:46 pid:73051 tid:14013] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=bb  exist from 82.156.171.212:9091
+Info         [2022-07-01 14:31:46 pid:73051 tid:14013] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:161 MTry)Try, key=bb  exist from 182.92.68.121:9091
+Info         [2022-07-01 14:31:46 pid:73051 tid:14013] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:217 MSet)exist: 11
+Info         [2022-07-01 14:31:46 pid:73051 tid:14012] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-07-01 14:31:46 pid:73051 tid:14013] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 82.156.171.212:9091
+Info         [2022-07-01 14:31:46 pid:73051 tid:14012] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:276 MSetFromSlave)MSetFromSlave end
+Info         [2022-07-01 14:31:46 pid:73051 tid:14013] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:241 MSet)Set success from 182.92.68.121:9091
+Info         [2022-07-01 14:31:46 pid:73051 tid:14013] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:259 MSet)end set
+Info         [2022-07-01 14:31:46 pid:73051 tid:14012] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:379 MMFinish)MMFinish begin
+Info         [2022-07-01 14:31:46 pid:73051 tid:14012] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:388 MFinish)MFinish begin
+Info         [2022-07-01 14:31:46 pid:73051 tid:14012] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-07-01 14:31:46 pid:73051 tid:14012] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:417 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-07-01 14:31:46 pid:73051 tid:14012] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-07-01 14:31:46 pid:73051 tid:14012] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:411 MFinish)finish success from 182.92.68.121:9091
+Info         [2022-07-01 14:32:05 pid:73051 tid:14013] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:54 MGet)MGet begin
+Info         [2022-07-01 14:32:05 pid:73051 tid:14013] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get fail, value= from 82.156.171.212:9091
+Info         [2022-07-01 14:32:05 pid:73051 tid:14013] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:102 MGet)Get fail, value= from 182.92.68.121:9091
+Info         [2022-07-01 14:32:05 pid:73051 tid:14013] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:50 Get)Get message: fail, value: 
+Info         [2022-07-21 21:49:06 pid:11962 tid:14064] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-07-21 21:50:36 pid:11966 tid:13963] (/root/wokespace/master_rpc/log/elog.cpp:245 elog_start)EasyLogger V2.2.99 is initialize success.
+Info         [2022-07-21 21:50:45 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:52 MGet)MGet begin
+Info         [2022-07-21 21:50:45 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:99 MGet)Get success, value=b from 82.156.171.212:9091
+Info         [2022-07-21 21:50:45 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:99 MGet)Get fail, value= from 182.92.68.121:9091
+Info         [2022-07-21 21:50:45 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:48 Get)Get message: fail, value: 
+Info         [2022-07-21 21:51:09 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:158 MTry)Try, key=a  exist from 82.156.171.212:9091
+Info         [2022-07-21 21:51:09 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:158 MTry)Try, key=a not exist from 182.92.68.121:9091
+Info         [2022-07-21 21:51:09 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:212 MSet)exist: 10
+Info         [2022-07-21 21:51:09 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:271 MSetFromSlave)MSetFromSlave end
+Info         [2022-07-21 21:51:09 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:236 MSet)Set success from 82.156.171.212:9091
+Info         [2022-07-21 21:51:09 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:271 MSetFromSlave)MSetFromSlave end
+Info         [2022-07-21 21:51:09 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:236 MSet)Set success from 182.92.68.121:9091
+Info         [2022-07-21 21:51:09 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:254 MSet)end set
+Info         [2022-07-21 21:51:09 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:374 MMFinish)MMFinish begin
+Info         [2022-07-21 21:51:09 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:383 MFinish)MFinish begin
+Info         [2022-07-21 21:51:09 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:412 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-07-21 21:51:09 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:412 MFinishFromSlave)MFinishFromSlave begin
+Info         [2022-07-21 21:51:09 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:406 MFinish)finish success from 82.156.171.212:9091
+Info         [2022-07-21 21:51:09 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:406 MFinish)finish success from 182.92.68.121:9091
+Info         [2022-07-21 21:51:15 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:52 MGet)MGet begin
+Info         [2022-07-21 21:51:15 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:99 MGet)Get success, value=b from 82.156.171.212:9091
+Info         [2022-07-21 21:51:15 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:99 MGet)Get success, value=b from 182.92.68.121:9091
+Info         [2022-07-21 21:51:15 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:48 Get)Get message: success, value: b
+Info         [2022-07-21 21:52:09 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:52 MGet)MGet begin
+Error         [2022-07-21 21:52:09 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:70 MGet)thrift error: socket open() error: Connection refused from 82.156.171.212:9091
+Info         [2022-07-21 21:52:09 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:48 Get)Get message: fail, value: 
+Info         [2022-07-21 21:53:06 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:52 MGet)MGet begin
+Info         [2022-07-21 21:53:06 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:99 MGet)Get success, value=b from 82.156.171.212:9091
+Info         [2022-07-21 21:53:06 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:99 MGet)Get success, value=b from 182.92.68.121:9091
+Info         [2022-07-21 21:53:06 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:48 Get)Get message: success, value: b
+Info         [2022-07-21 21:53:14 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:52 MGet)MGet begin
+Error         [2022-07-21 21:53:14 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:70 MGet)thrift error: socket open() error: Connection refused from 182.92.68.121:9091
+Info         [2022-07-21 21:53:14 pid:11966 tid:13963] (/root/wokespace/master_rpc/gen-cpp/Master_server.cpp:48 Get)Get message: fail, value: 
